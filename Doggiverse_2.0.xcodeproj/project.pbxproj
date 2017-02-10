@@ -7,21 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EF91A08EDAB535A33986256 /* Pods_Doggiverse_2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCF796F0F9A21BFA853FB1A /* Pods_Doggiverse_2_0.framework */; };
+		8486C1E21E4E11CF00A01D44 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1E11E4E11CF00A01D44 /* SCLAlertView.swift */; };
+		8486C1E41E4E11EB00A01D44 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1E31E4E11EB00A01D44 /* User.swift */; };
+		8486C1E61E4E156200A01D44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1E51E4E156200A01D44 /* HomeViewController.swift */; };
+		8486C1E81E4E159E00A01D44 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1E71E4E159E00A01D44 /* ImageTableViewCell.swift */; };
+		8486C1EA1E4E15C600A01D44 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1E91E4E15C600A01D44 /* Post.swift */; };
+		8486C1EC1E4E15E300A01D44 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1EB1E4E15E300A01D44 /* UserTableViewCell.swift */; };
+		8486C1EE1E4E160D00A01D44 /* SelectedUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1ED1E4E160D00A01D44 /* SelectedUserProfileViewController.swift */; };
+		8486C1F01E4E164300A01D44 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1EF1E4E164300A01D44 /* CoreDataStack.swift */; };
+		8486C1F21E4E16C400A01D44 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1F11E4E16C400A01D44 /* MemeEditorViewController.swift */; };
+		8486C1F41E4E16F200A01D44 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1F31E4E16F200A01D44 /* UserProfileViewController.swift */; };
+		8486C1F61E4E171C00A01D44 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1F51E4E171C00A01D44 /* AddPostViewController.swift */; };
+		8486C1F91E4E17D900A01D44 /* CustomizableTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1F71E4E17D900A01D44 /* CustomizableTextfield.swift */; };
+		8486C1FA1E4E17D900A01D44 /* CustomizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1F81E4E17D900A01D44 /* CustomizableView.swift */; };
+		8486C1FD1E4E17E500A01D44 /* CustomizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1FB1E4E17E500A01D44 /* CustomizableButton.swift */; };
+		8486C1FE1E4E17E500A01D44 /* CustomizableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C1FC1E4E17E500A01D44 /* CustomizableImageView.swift */; };
+		8486C2061E4E241400A01D44 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8486C2041E4E241400A01D44 /* Model.xcdatamodeld */; };
+		8486C20B1E4E25D300A01D44 /* UserProfile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C2071E4E25D300A01D44 /* UserProfile+CoreDataClass.swift */; };
+		8486C20C1E4E25D300A01D44 /* UserProfile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C2081E4E25D300A01D44 /* UserProfile+CoreDataProperties.swift */; };
+		8486C20D1E4E25D300A01D44 /* Meme+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C2091E4E25D300A01D44 /* Meme+CoreDataClass.swift */; };
+		8486C20E1E4E25D300A01D44 /* Meme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486C20A1E4E25D300A01D44 /* Meme+CoreDataProperties.swift */; };
 		84D2228E1E4E0B43002D275B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2228D1E4E0B43002D275B /* AppDelegate.swift */; };
-		84D222901E4E0B43002D275B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2228F1E4E0B43002D275B /* ViewController.swift */; };
 		84D222931E4E0B43002D275B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D222911E4E0B43002D275B /* Main.storyboard */; };
 		84D222951E4E0B43002D275B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D222941E4E0B43002D275B /* Assets.xcassets */; };
 		84D222981E4E0B43002D275B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D222961E4E0B43002D275B /* LaunchScreen.storyboard */; };
+		84D222A11E4E0DB8002D275B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D222A01E4E0DB8002D275B /* GoogleService-Info.plist */; };
+		84D222A41E4E1076002D275B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D222A31E4E1076002D275B /* LoginViewController.swift */; };
+		84D222A61E4E10E0002D275B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D222A51E4E10E0002D275B /* SignUpViewController.swift */; };
+		84D222A81E4E1127002D275B /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D222A71E4E1127002D275B /* FirebaseClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BCF796F0F9A21BFA853FB1A /* Pods_Doggiverse_2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doggiverse_2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D9CFB6D9BA54A92B5D4B204 /* Pods-Doggiverse_2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doggiverse_2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doggiverse_2.0/Pods-Doggiverse_2.0.debug.xcconfig"; sourceTree = "<group>"; };
+		6C7B25ACFCCCF3338C5FF643 /* Pods-Doggiverse_2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doggiverse_2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doggiverse_2.0/Pods-Doggiverse_2.0.release.xcconfig"; sourceTree = "<group>"; };
+		8486C1E11E4E11CF00A01D44 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		8486C1E31E4E11EB00A01D44 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8486C1E51E4E156200A01D44 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8486C1E71E4E159E00A01D44 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		8486C1E91E4E15C600A01D44 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8486C1EB1E4E15E300A01D44 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		8486C1ED1E4E160D00A01D44 /* SelectedUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedUserProfileViewController.swift; sourceTree = "<group>"; };
+		8486C1EF1E4E164300A01D44 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		8486C1F11E4E16C400A01D44 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
+		8486C1F31E4E16F200A01D44 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		8486C1F51E4E171C00A01D44 /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		8486C1F71E4E17D900A01D44 /* CustomizableTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableTextfield.swift; sourceTree = "<group>"; };
+		8486C1F81E4E17D900A01D44 /* CustomizableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableView.swift; sourceTree = "<group>"; };
+		8486C1FB1E4E17E500A01D44 /* CustomizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableButton.swift; sourceTree = "<group>"; };
+		8486C1FC1E4E17E500A01D44 /* CustomizableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableImageView.swift; sourceTree = "<group>"; };
+		8486C2051E4E241400A01D44 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8486C2071E4E25D300A01D44 /* UserProfile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserProfile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8486C2081E4E25D300A01D44 /* UserProfile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserProfile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8486C2091E4E25D300A01D44 /* Meme+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meme+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8486C20A1E4E25D300A01D44 /* Meme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meme+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84D2228A1E4E0B43002D275B /* Doggiverse_2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggiverse_2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D2228D1E4E0B43002D275B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84D2228F1E4E0B43002D275B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84D222921E4E0B43002D275B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D222941E4E0B43002D275B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D222971E4E0B43002D275B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D222991E4E0B44002D275B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D2229F1E4E0B69002D275B /* Doggiverse_2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doggiverse_2.0.entitlements; sourceTree = "<group>"; };
+		84D222A01E4E0DB8002D275B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84D222A31E4E1076002D275B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84D222A51E4E10E0002D275B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84D222A71E4E1127002D275B /* FirebaseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +80,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF91A08EDAB535A33986256 /* Pods_Doggiverse_2_0.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8486C1FF1E4E17EE00A01D44 /* Customizables */ = {
+			isa = PBXGroup;
+			children = (
+				8486C1F71E4E17D900A01D44 /* CustomizableTextfield.swift */,
+				8486C1F81E4E17D900A01D44 /* CustomizableView.swift */,
+				8486C1FB1E4E17E500A01D44 /* CustomizableButton.swift */,
+				8486C1FC1E4E17E500A01D44 /* CustomizableImageView.swift */,
+			);
+			name = Customizables;
+			sourceTree = "<group>";
+		};
+		8486C2001E4E180900A01D44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8486C1FF1E4E17EE00A01D44 /* Customizables */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8486C2011E4E181F00A01D44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84D222A71E4E1127002D275B /* FirebaseClient.swift */,
+				8486C1E91E4E15C600A01D44 /* Post.swift */,
+				8486C1E31E4E11EB00A01D44 /* User.swift */,
+				8486C2031E4E189F00A01D44 /* CoreData */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8486C2021E4E183A00A01D44 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84D222A51E4E10E0002D275B /* SignUpViewController.swift */,
+				84D222A31E4E1076002D275B /* LoginViewController.swift */,
+				8486C1E51E4E156200A01D44 /* HomeViewController.swift */,
+				8486C1F11E4E16C400A01D44 /* MemeEditorViewController.swift */,
+				8486C1F31E4E16F200A01D44 /* UserProfileViewController.swift */,
+				8486C1F51E4E171C00A01D44 /* AddPostViewController.swift */,
+				8486C1ED1E4E160D00A01D44 /* SelectedUserProfileViewController.swift */,
+				8486C1E71E4E159E00A01D44 /* ImageTableViewCell.swift */,
+				8486C1EB1E4E15E300A01D44 /* UserTableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8486C2031E4E189F00A01D44 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8486C2071E4E25D300A01D44 /* UserProfile+CoreDataClass.swift */,
+				8486C2081E4E25D300A01D44 /* UserProfile+CoreDataProperties.swift */,
+				8486C2091E4E25D300A01D44 /* Meme+CoreDataClass.swift */,
+				8486C20A1E4E25D300A01D44 /* Meme+CoreDataProperties.swift */,
+				8486C1EF1E4E164300A01D44 /* CoreDataStack.swift */,
+				8486C2041E4E241400A01D44 /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		84D222811E4E0B43002D275B = {
 			isa = PBXGroup;
 			children = (
 				84D2228C1E4E0B43002D275B /* Doggiverse_2.0 */,
 				84D2228B1E4E0B43002D275B /* Products */,
+				ED0EBC95E26D45D361E2A036 /* Pods */,
+				FAA2B0E19A6E50CE2BC07273 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +167,44 @@
 		84D2228C1E4E0B43002D275B /* Doggiverse_2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				84D2228D1E4E0B43002D275B /* AppDelegate.swift */,
-				84D2228F1E4E0B43002D275B /* ViewController.swift */,
+				84D2229F1E4E0B69002D275B /* Doggiverse_2.0.entitlements */,
 				84D222911E4E0B43002D275B /* Main.storyboard */,
 				84D222941E4E0B43002D275B /* Assets.xcassets */,
 				84D222961E4E0B43002D275B /* LaunchScreen.storyboard */,
-				84D222991E4E0B44002D275B /* Info.plist */,
+				8486C2021E4E183A00A01D44 /* Controller */,
+				8486C2011E4E181F00A01D44 /* Model */,
+				8486C2001E4E180900A01D44 /* View */,
+				84D222A21E4E0F8F002D275B /* Supporting Files */,
 			);
 			path = Doggiverse_2.0;
+			sourceTree = "<group>";
+		};
+		84D222A21E4E0F8F002D275B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8486C1E11E4E11CF00A01D44 /* SCLAlertView.swift */,
+				84D2228D1E4E0B43002D275B /* AppDelegate.swift */,
+				84D222991E4E0B44002D275B /* Info.plist */,
+				84D222A01E4E0DB8002D275B /* GoogleService-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED0EBC95E26D45D361E2A036 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D9CFB6D9BA54A92B5D4B204 /* Pods-Doggiverse_2.0.debug.xcconfig */,
+				6C7B25ACFCCCF3338C5FF643 /* Pods-Doggiverse_2.0.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FAA2B0E19A6E50CE2BC07273 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BCF796F0F9A21BFA853FB1A /* Pods_Doggiverse_2_0.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84D2229C1E4E0B44002D275B /* Build configuration list for PBXNativeTarget "Doggiverse_2.0" */;
 			buildPhases = (
+				A65117F0502BF4417EEAFC7D /* [CP] Check Pods Manifest.lock */,
 				84D222861E4E0B43002D275B /* Sources */,
 				84D222871E4E0B43002D275B /* Frameworks */,
 				84D222881E4E0B43002D275B /* Resources */,
+				CA167316262BC2A7EFF7606D /* [CP] Embed Pods Frameworks */,
+				699A2732BCEEC06DE4D61E04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +244,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = XS5FRJH7AZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -125,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D222981E4E0B43002D275B /* LaunchScreen.storyboard in Resources */,
+				84D222A11E4E0DB8002D275B /* GoogleService-Info.plist in Resources */,
 				84D222951E4E0B43002D275B /* Assets.xcassets in Resources */,
 				84D222931E4E0B43002D275B /* Main.storyboard in Resources */,
 			);
@@ -132,13 +284,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		699A2732BCEEC06DE4D61E04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doggiverse_2.0/Pods-Doggiverse_2.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A65117F0502BF4417EEAFC7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA167316262BC2A7EFF7606D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doggiverse_2.0/Pods-Doggiverse_2.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84D222861E4E0B43002D275B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D222901E4E0B43002D275B /* ViewController.swift in Sources */,
+				84D222A61E4E10E0002D275B /* SignUpViewController.swift in Sources */,
+				8486C1F91E4E17D900A01D44 /* CustomizableTextfield.swift in Sources */,
+				8486C1F61E4E171C00A01D44 /* AddPostViewController.swift in Sources */,
+				8486C1EE1E4E160D00A01D44 /* SelectedUserProfileViewController.swift in Sources */,
+				8486C20B1E4E25D300A01D44 /* UserProfile+CoreDataClass.swift in Sources */,
+				8486C1FA1E4E17D900A01D44 /* CustomizableView.swift in Sources */,
+				8486C1E81E4E159E00A01D44 /* ImageTableViewCell.swift in Sources */,
+				8486C20E1E4E25D300A01D44 /* Meme+CoreDataProperties.swift in Sources */,
+				8486C1F01E4E164300A01D44 /* CoreDataStack.swift in Sources */,
+				8486C2061E4E241400A01D44 /* Model.xcdatamodeld in Sources */,
+				8486C1F21E4E16C400A01D44 /* MemeEditorViewController.swift in Sources */,
+				84D222A41E4E1076002D275B /* LoginViewController.swift in Sources */,
+				8486C1E41E4E11EB00A01D44 /* User.swift in Sources */,
+				8486C1FE1E4E17E500A01D44 /* CustomizableImageView.swift in Sources */,
+				8486C1EC1E4E15E300A01D44 /* UserTableViewCell.swift in Sources */,
+				8486C20C1E4E25D300A01D44 /* UserProfile+CoreDataProperties.swift in Sources */,
+				8486C1E21E4E11CF00A01D44 /* SCLAlertView.swift in Sources */,
+				8486C20D1E4E25D300A01D44 /* Meme+CoreDataClass.swift in Sources */,
+				8486C1F41E4E16F200A01D44 /* UserProfileViewController.swift in Sources */,
 				84D2228E1E4E0B43002D275B /* AppDelegate.swift in Sources */,
+				8486C1EA1E4E15C600A01D44 /* Post.swift in Sources */,
+				8486C1E61E4E156200A01D44 /* HomeViewController.swift in Sources */,
+				84D222A81E4E1127002D275B /* FirebaseClient.swift in Sources */,
+				8486C1FD1E4E17E500A01D44 /* CustomizableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,10 +479,13 @@
 		};
 		84D2229D1E4E0B44002D275B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D9CFB6D9BA54A92B5D4B204 /* Pods-Doggiverse_2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Doggiverse_2.0/Doggiverse_2.0.entitlements;
 				DEVELOPMENT_TEAM = XS5FRJH7AZ;
 				INFOPLIST_FILE = Doggiverse_2.0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JPDaines.Doggiverse-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,10 +495,13 @@
 		};
 		84D2229E1E4E0B44002D275B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C7B25ACFCCCF3338C5FF643 /* Pods-Doggiverse_2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Doggiverse_2.0/Doggiverse_2.0.entitlements;
 				DEVELOPMENT_TEAM = XS5FRJH7AZ;
 				INFOPLIST_FILE = Doggiverse_2.0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "JPDaines.Doggiverse-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,8 +528,22 @@
 				84D2229E1E4E0B44002D275B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8486C2041E4E241400A01D44 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8486C2051E4E241400A01D44 /* Model.xcdatamodel */,
+			);
+			currentVersion = 8486C2051E4E241400A01D44 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84D222821E4E0B43002D275B /* Project object */;
 }

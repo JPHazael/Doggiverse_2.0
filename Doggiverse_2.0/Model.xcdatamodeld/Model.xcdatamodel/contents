@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Meme" representedClassName=".Meme" syncable="YES">
+        <attribute name="memedImage" attributeType="Binary" syncable="YES"/>
+        <attribute name="originalImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="textFieldBottom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textFieldTop" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserProfile" inverseName="memes" inverseEntity="UserProfile" syncable="YES"/>
+    </entity>
+    <entity name="UserProfile" representedClassName=".UserProfile" syncable="YES">
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="password" attributeType="String" syncable="YES"/>
+        <attribute name="username" attributeType="String" syncable="YES"/>
+        <relationship name="memes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Meme" inverseName="user" inverseEntity="Meme" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Meme" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="UserProfile" positionX="-54" positionY="18" width="128" height="105"/>
+    </elements>
+</model>

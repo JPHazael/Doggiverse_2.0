@@ -1,26 +1,1531 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tVb-a7-2c4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TitilliumWeb-Bold.ttf">
+            <string>TitilliumWeb-Bold</string>
+        </array>
+        <array key="TitilliumWeb-Regular.ttf">
+            <string>TitilliumWeb-Regular</string>
+        </array>
+        <array key="TitilliumWeb-SemiBold.ttf">
+            <string>TitilliumWeb-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Login View Controller-->
+        <scene sceneID="4rE-FD-KDv">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="tVb-a7-2c4" customClass="LoginViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="SO4-bh-YiV"/>
+                        <viewControllerLayoutGuide type="bottom" id="F8A-RK-dn7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="pzh-Ew-JoO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="silhouettes" translatesAutoresizingMaskIntoConstraints="NO" id="eKg-Rk-bHT" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="zQR-z8-GeZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11A-Gm-Nzy" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AI3-mP-GSQ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tgx-DI-JzC" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jf2-Jg-jVH"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49p-yC-qoU" customClass="CustomizableButton" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZdR-2G-dOE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="18"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInAction:" destination="tVb-a7-2c4" eventType="touchUpInside" id="gTp-C3-LtK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hS-zc-5TX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bsx-KC-Y0K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="16"/>
+                                <state key="normal" title="Forgot your password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="tVb-a7-2c4" eventType="touchUpInside" id="lzd-h8-UTt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzC-p7-gns" customClass="CustomizableButton" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sZO-Oz-tr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="18"/>
+                                <state key="normal" title="Create a new account">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="xTz-eI-GMw" kind="presentation" id="Xds-PY-BW6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Doggiverse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yj-r2-3q0">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="49p-yC-qoU" firstAttribute="centerX" secondItem="8hS-zc-5TX" secondAttribute="centerX" id="8D4-Y7-NIb"/>
+                            <constraint firstItem="8hS-zc-5TX" firstAttribute="top" secondItem="49p-yC-qoU" secondAttribute="bottom" constant="8" symbolic="YES" id="8kQ-QB-eFl"/>
+                            <constraint firstItem="11A-Gm-Nzy" firstAttribute="trailing" secondItem="49p-yC-qoU" secondAttribute="trailing" id="FIZ-B6-Wh9"/>
+                            <constraint firstItem="6yj-r2-3q0" firstAttribute="trailing" secondItem="tgx-DI-JzC" secondAttribute="trailing" id="I1d-IL-64g"/>
+                            <constraint firstAttribute="trailing" secondItem="eKg-Rk-bHT" secondAttribute="trailing" id="KAv-pN-pRF"/>
+                            <constraint firstItem="eKg-Rk-bHT" firstAttribute="top" secondItem="pzh-Ew-JoO" secondAttribute="top" id="MQo-tL-irA"/>
+                            <constraint firstItem="49p-yC-qoU" firstAttribute="top" secondItem="11A-Gm-Nzy" secondAttribute="bottom" constant="15" id="QUh-rO-fii"/>
+                            <constraint firstItem="tgx-DI-JzC" firstAttribute="leading" secondItem="pzh-Ew-JoO" secondAttribute="leadingMargin" constant="42" id="SoM-k7-ifl"/>
+                            <constraint firstItem="6yj-r2-3q0" firstAttribute="top" secondItem="eKg-Rk-bHT" secondAttribute="bottom" constant="8" symbolic="YES" id="TMA-Gs-mA1"/>
+                            <constraint firstItem="tgx-DI-JzC" firstAttribute="top" secondItem="eKg-Rk-bHT" secondAttribute="bottom" constant="48" id="VV1-cG-UtE"/>
+                            <constraint firstItem="tgx-DI-JzC" firstAttribute="leading" secondItem="11A-Gm-Nzy" secondAttribute="leading" id="YYb-6C-raB"/>
+                            <constraint firstItem="11A-Gm-Nzy" firstAttribute="leading" secondItem="49p-yC-qoU" secondAttribute="leading" id="cim-v4-rGD"/>
+                            <constraint firstItem="tgx-DI-JzC" firstAttribute="trailing" secondItem="11A-Gm-Nzy" secondAttribute="trailing" id="dSu-hi-4Ce"/>
+                            <constraint firstItem="49p-yC-qoU" firstAttribute="trailing" secondItem="rzC-p7-gns" secondAttribute="trailing" id="pTv-2S-zdG"/>
+                            <constraint firstItem="F8A-RK-dn7" firstAttribute="top" secondItem="rzC-p7-gns" secondAttribute="bottom" constant="20" id="rYd-bk-gTy"/>
+                            <constraint firstItem="eKg-Rk-bHT" firstAttribute="leading" secondItem="pzh-Ew-JoO" secondAttribute="leading" id="riY-s6-5EX"/>
+                            <constraint firstItem="8hS-zc-5TX" firstAttribute="leading" secondItem="pzh-Ew-JoO" secondAttribute="leadingMargin" constant="98" id="t1a-Cb-IL2"/>
+                            <constraint firstItem="6yj-r2-3q0" firstAttribute="leading" secondItem="tgx-DI-JzC" secondAttribute="leading" id="u2M-2i-7EM"/>
+                            <constraint firstItem="49p-yC-qoU" firstAttribute="leading" secondItem="rzC-p7-gns" secondAttribute="leading" id="v7h-G4-e4e"/>
+                            <constraint firstItem="11A-Gm-Nzy" firstAttribute="top" secondItem="tgx-DI-JzC" secondAttribute="bottom" id="wYn-LH-0cJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="tgx-DI-JzC" id="tEW-cR-ir1"/>
+                        <outlet property="forgotDetailButton" destination="8hS-zc-5TX" id="5J8-Bt-XtT"/>
+                        <outlet property="passwordTextField" destination="11A-Gm-Nzy" id="Med-42-iW5"/>
+                        <outlet property="signInButton" destination="49p-yC-qoU" id="qVW-Mz-dFJ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uv2-So-UDT" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="K5c-0I-Lx3">
+            <objects>
+                <viewController id="xTz-eI-GMw" customClass="SignUpViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="flG-Yq-8xf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ru5-SN-DBh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="Axc-e0-ZqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jec-TW-1ts" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="ubr-bW-GN0"/>
+                                    <constraint firstAttribute="height" constant="50" id="vcq-AP-PDq"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="E-mail" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iW0-0O-Gk4" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="WpX-01-e9W"/>
+                                    <constraint firstAttribute="height" constant="50" id="f5m-Rg-D9z"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last name" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZi-fg-YUG" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3g0-A6-3pI"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Country" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NOD-en-vkA" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bbQ-IP-cuJ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1k-Az-RkI" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="cWr-QH-imB"/>
+                                    <constraint firstAttribute="height" constant="50" id="iEt-Kg-5jx"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Re-enter password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBO-o4-dnz" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jdc-3K-8dM"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEG-Ss-okP" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mg2-do-anP"/>
+                                    <constraint firstAttribute="width" constant="255" id="mFA-C4-qyk"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="Qyy-qm-hMo" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="Ocx-7L-bYj"/>
+                                    <constraint firstAttribute="height" constant="128" id="b57-b7-Pq3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="64"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dNQ-rq-nCk" appends="YES" id="O1W-iM-Dru"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WoW-ma-hFl">
+                                <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FaX-TO-eR6"/>
+                                    <constraint firstAttribute="width" constant="2" id="U4A-rG-Iin"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-q8-IAX">
+                                <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="2" id="6h3-Ip-xpS"/>
+                                    <constraint firstAttribute="height" constant="50" id="mCT-XL-s9r"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70K-ZM-ND4">
+                                <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sOl-WJ-Zu5"/>
+                                    <constraint firstAttribute="width" constant="2" id="tnQ-3v-c8A"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-Cw-UQz" customClass="CustomizableButton" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IWR-pP-2cx"/>
+                                    <constraint firstAttribute="width" constant="40" id="JLS-ec-UFd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="19"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="9il-a0-zhu" kind="unwind" unwindAction="unwindToLogin:" id="GAB-Ud-Gu3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOy-UO-FVa" customClass="CustomizableButton" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="18"/>
+                                <state key="normal" title="Create account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccountAction:" destination="xTz-eI-GMw" eventType="touchUpInside" id="uaw-Z8-puh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the dog to set a profile picture." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uos-I5-FUt">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="By creating an account you are agreeing to Doggiverse's terms of service. Don't worry though, they are super fair." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OD-ZW-vSI">
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qyy-qm-hMo" firstAttribute="centerX" secondItem="Axc-e0-ZqU" secondAttribute="centerX" id="1HT-tM-exl"/>
+                            <constraint firstItem="NZi-fg-YUG" firstAttribute="trailing" secondItem="Axc-e0-ZqU" secondAttribute="trailingMargin" id="2nY-e3-hUZ"/>
+                            <constraint firstItem="70K-ZM-ND4" firstAttribute="top" secondItem="dBO-o4-dnz" secondAttribute="bottom" constant="-50" id="4sp-Zd-VtA"/>
+                            <constraint firstItem="NOD-en-vkA" firstAttribute="trailing" secondItem="Axc-e0-ZqU" secondAttribute="trailingMargin" id="6lQ-Hq-wOX"/>
+                            <constraint firstItem="NZi-fg-YUG" firstAttribute="leading" secondItem="WoW-ma-hFl" secondAttribute="trailing" constant="4" id="9n2-ou-da9"/>
+                            <constraint firstItem="NZi-fg-YUG" firstAttribute="top" secondItem="Qyy-qm-hMo" secondAttribute="bottom" constant="28" id="9zF-1T-BCI"/>
+                            <constraint firstItem="iDb-Cw-UQz" firstAttribute="leading" secondItem="Axc-e0-ZqU" secondAttribute="leadingMargin" id="A08-K2-egp"/>
+                            <constraint firstItem="iDb-Cw-UQz" firstAttribute="top" secondItem="flG-Yq-8xf" secondAttribute="bottom" constant="16" id="AbK-Kp-DBZ"/>
+                            <constraint firstItem="6OD-ZW-vSI" firstAttribute="top" secondItem="fOy-UO-FVa" secondAttribute="bottom" constant="8" id="C7g-jU-Uc0"/>
+                            <constraint firstItem="70K-ZM-ND4" firstAttribute="leading" secondItem="o1k-Az-RkI" secondAttribute="trailing" constant="3" id="CiO-B7-PoG"/>
+                            <constraint firstItem="Jec-TW-1ts" firstAttribute="top" secondItem="Qyy-qm-hMo" secondAttribute="bottom" constant="28" id="Ej8-r1-wIr"/>
+                            <constraint firstItem="Jec-TW-1ts" firstAttribute="leading" secondItem="Axc-e0-ZqU" secondAttribute="leadingMargin" id="FlG-gh-CaT"/>
+                            <constraint firstItem="dBO-o4-dnz" firstAttribute="top" secondItem="iW0-0O-Gk4" secondAttribute="bottom" constant="8" id="KZy-Yz-xWR"/>
+                            <constraint firstItem="fOy-UO-FVa" firstAttribute="top" secondItem="pEG-Ss-okP" secondAttribute="bottom" constant="15" id="Lxx-yv-7cT"/>
+                            <constraint firstItem="dBO-o4-dnz" firstAttribute="top" secondItem="NOD-en-vkA" secondAttribute="bottom" constant="8" id="PTC-JH-Rv4"/>
+                            <constraint firstItem="o1k-Az-RkI" firstAttribute="leading" secondItem="Axc-e0-ZqU" secondAttribute="leadingMargin" id="QXZ-pU-oXa"/>
+                            <constraint firstItem="Ru5-SN-DBh" firstAttribute="top" secondItem="fOy-UO-FVa" secondAttribute="bottom" constant="160" id="RKR-VF-wRF"/>
+                            <constraint firstItem="iW0-0O-Gk4" firstAttribute="top" secondItem="Jec-TW-1ts" secondAttribute="bottom" constant="8" id="RNJ-aq-hgr"/>
+                            <constraint firstItem="6OD-ZW-vSI" firstAttribute="trailing" secondItem="fOy-UO-FVa" secondAttribute="trailing" constant="50" id="RYY-fi-tw1"/>
+                            <constraint firstItem="6OD-ZW-vSI" firstAttribute="leading" secondItem="o1k-Az-RkI" secondAttribute="leading" id="TCW-d7-ojR"/>
+                            <constraint firstItem="pEG-Ss-okP" firstAttribute="top" secondItem="dBO-o4-dnz" secondAttribute="bottom" constant="11" id="Tj8-F2-TsU"/>
+                            <constraint firstItem="o1k-Az-RkI" firstAttribute="top" secondItem="iW0-0O-Gk4" secondAttribute="bottom" constant="8" id="Uqf-rV-dJx"/>
+                            <constraint firstItem="Qyy-qm-hMo" firstAttribute="top" secondItem="Uos-I5-FUt" secondAttribute="bottom" constant="2" id="WDn-F9-wdI"/>
+                            <constraint firstItem="fOy-UO-FVa" firstAttribute="centerX" secondItem="70K-ZM-ND4" secondAttribute="centerX" id="YTN-uj-JhU"/>
+                            <constraint firstItem="Uos-I5-FUt" firstAttribute="leading" secondItem="iDb-Cw-UQz" secondAttribute="trailing" constant="21" id="ZFZ-a1-FXJ"/>
+                            <constraint firstItem="fOy-UO-FVa" firstAttribute="trailing" secondItem="pEG-Ss-okP" secondAttribute="trailing" id="bq7-fy-l1j"/>
+                            <constraint firstItem="WoW-ma-hFl" firstAttribute="top" secondItem="NZi-fg-YUG" secondAttribute="bottom" constant="-50" id="f1A-b5-yQf"/>
+                            <constraint firstItem="fKp-q8-IAX" firstAttribute="leading" secondItem="iW0-0O-Gk4" secondAttribute="trailing" constant="3" id="f2z-mw-H7f"/>
+                            <constraint firstItem="WoW-ma-hFl" firstAttribute="leading" secondItem="Jec-TW-1ts" secondAttribute="trailing" constant="3" id="fJ2-NY-ukh"/>
+                            <constraint firstAttribute="bottom" secondItem="6OD-ZW-vSI" secondAttribute="bottom" constant="85" id="h8B-I6-uxQ"/>
+                            <constraint firstItem="fKp-q8-IAX" firstAttribute="top" secondItem="NOD-en-vkA" secondAttribute="bottom" constant="-50" id="hF2-La-zB5"/>
+                            <constraint firstItem="Qyy-qm-hMo" firstAttribute="top" secondItem="flG-Yq-8xf" secondAttribute="bottom" constant="39" id="ixu-3K-G5F"/>
+                            <constraint firstItem="dBO-o4-dnz" firstAttribute="trailing" secondItem="Axc-e0-ZqU" secondAttribute="trailingMargin" id="q45-39-ZLq"/>
+                            <constraint firstItem="NOD-en-vkA" firstAttribute="leading" secondItem="fKp-q8-IAX" secondAttribute="trailing" constant="3" id="sDm-Bl-Qjr"/>
+                            <constraint firstItem="fOy-UO-FVa" firstAttribute="leading" secondItem="Axc-e0-ZqU" secondAttribute="leadingMargin" constant="35" id="sNk-1m-N8u"/>
+                            <constraint firstItem="Uos-I5-FUt" firstAttribute="centerX" secondItem="Qyy-qm-hMo" secondAttribute="centerX" id="syw-42-ZQu"/>
+                            <constraint firstItem="Uos-I5-FUt" firstAttribute="top" secondItem="iDb-Cw-UQz" secondAttribute="top" id="vtJ-B1-Qcq"/>
+                            <constraint firstItem="dBO-o4-dnz" firstAttribute="leading" secondItem="70K-ZM-ND4" secondAttribute="trailing" constant="4" id="wlD-mC-3vm"/>
+                            <constraint firstItem="NOD-en-vkA" firstAttribute="top" secondItem="NZi-fg-YUG" secondAttribute="bottom" constant="8" id="zYY-7r-97f"/>
+                            <constraint firstItem="iW0-0O-Gk4" firstAttribute="leading" secondItem="Axc-e0-ZqU" secondAttribute="leadingMargin" id="zaz-L5-9ff"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countryTextField" destination="NOD-en-vkA" id="8DD-jt-LYg"/>
+                        <outlet property="createAccountButton" destination="fOy-UO-FVa" id="JJS-Q0-2wk"/>
+                        <outlet property="emailTextField" destination="iW0-0O-Gk4" id="U9P-IE-bdN"/>
+                        <outlet property="firstnameTextField" destination="Jec-TW-1ts" id="xMg-Fq-Q9w"/>
+                        <outlet property="lastnameTextField" destination="NZi-fg-YUG" id="7mF-3w-PWN"/>
+                        <outlet property="passwordTextField" destination="o1k-Az-RkI" id="z6u-ZQ-rOc"/>
+                        <outlet property="reenterPasswordTextField" destination="dBO-o4-dnz" id="9VX-Ok-242"/>
+                        <outlet property="userProfileImageView" destination="Qyy-qm-hMo" id="rMD-6Y-Dqx"/>
+                        <outlet property="usernameTextField" destination="pEG-Ss-okP" id="as1-uv-vlw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7W-UT-osm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9il-a0-zhu" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="dNQ-rq-nCk">
+                    <connections>
+                        <action selector="choosePictureAction:" destination="xTz-eI-GMw" id="HzY-Gd-3t8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="138.98050974512745"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="47c-db-fLe">
+            <objects>
+                <viewController storyboardIdentifier="Home" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZYq-GO-ipP" customClass="HomeViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xya-Bk-RFz"/>
+                        <viewControllerLayoutGuide type="bottom" id="phK-BW-5BQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Home" id="Ufd-GI-FND">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XN-eQ-TP6">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOp-9c-gj4">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jlj-Vg-N7L"/>
+                                            <constraint firstAttribute="width" constant="37" id="rFf-7f-AMp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="logout:" destination="ZYq-GO-ipP" eventType="touchUpInside" id="Lbb-jc-Ta7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ba-Fc-9zF">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="123" id="HGb-hl-g3O"/>
+                                        </constraints>
+                                        <state key="normal" image="Doggy_Head"/>
+                                        <connections>
+                                            <segue destination="8eo-Fz-KC4" kind="presentation" id="FO5-EB-4h5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhD-3E-24x">
+                                        <state key="normal" image="Add Camera"/>
+                                        <connections>
+                                            <segue destination="e6l-C8-grj" kind="presentation" id="VhP-4e-bzD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GOp-9c-gj4" firstAttribute="top" secondItem="3XN-eQ-TP6" secondAttribute="top" constant="40" id="1Qs-Ug-7C3"/>
+                                    <constraint firstItem="5Ba-Fc-9zF" firstAttribute="leading" secondItem="GhD-3E-24x" secondAttribute="trailing" constant="76" id="Ed1-x1-ra3"/>
+                                    <constraint firstItem="GOp-9c-gj4" firstAttribute="leading" secondItem="5Ba-Fc-9zF" secondAttribute="trailing" constant="80" id="TDW-d2-gaR"/>
+                                    <constraint firstItem="5Ba-Fc-9zF" firstAttribute="top" secondItem="3XN-eQ-TP6" secondAttribute="top" constant="15" id="U2n-ZI-yOB"/>
+                                    <constraint firstAttribute="height" constant="120" id="Xse-kf-vWs"/>
+                                    <constraint firstAttribute="trailing" secondItem="GOp-9c-gj4" secondAttribute="trailing" constant="8" id="szo-OR-hgf"/>
+                                    <constraint firstItem="GhD-3E-24x" firstAttribute="top" secondItem="GOp-9c-gj4" secondAttribute="top" id="udU-ji-vsm"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="w0Z-Wm-Cti">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="102" id="mqO-4y-fKq" customClass="UserTableViewCell" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mqO-4y-fKq" id="McT-Qz-STE">
+                                            <frame key="frameInset" width="375" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-Hx-Mde" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="bYx-yV-AY7"/>
+                                                        <constraint firstAttribute="width" constant="80" id="eBQ-hD-wxs"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xge-Vf-5Go">
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="19"/>
+                                                    <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-Fc-91m" customClass="User">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="let-jh-ekg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzJ-yn-Byl">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="203" id="InO-Oy-Mpo"/>
+                                                        <constraint firstAttribute="height" constant="40" id="V8w-g0-0x7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xge-Vf-5Go" firstAttribute="trailing" secondItem="McT-Qz-STE" secondAttribute="trailingMargin" id="7u5-RW-BTE"/>
+                                                <constraint firstItem="9RR-Hx-Mde" firstAttribute="leading" secondItem="McT-Qz-STE" secondAttribute="leadingMargin" id="GzY-aB-eTg"/>
+                                                <constraint firstItem="Xge-Vf-5Go" firstAttribute="leading" secondItem="9RR-Hx-Mde" secondAttribute="trailing" constant="8" id="R8l-Vv-pxM"/>
+                                                <constraint firstItem="Xge-Vf-5Go" firstAttribute="top" secondItem="McT-Qz-STE" secondAttribute="topMargin" id="Vbe-zM-dNw"/>
+                                                <constraint firstItem="9RR-Hx-Mde" firstAttribute="top" secondItem="McT-Qz-STE" secondAttribute="topMargin" id="WBH-2W-BjU"/>
+                                                <constraint firstItem="Yy8-Fc-91m" firstAttribute="top" secondItem="Xge-Vf-5Go" secondAttribute="bottom" constant="8" id="WaP-Dv-gfl"/>
+                                                <constraint firstItem="IzJ-yn-Byl" firstAttribute="top" secondItem="Yy8-Fc-91m" secondAttribute="top" id="Wwg-g6-eaB"/>
+                                                <constraint firstItem="IzJ-yn-Byl" firstAttribute="leading" secondItem="Xge-Vf-5Go" secondAttribute="leading" id="ad1-fa-Gjx"/>
+                                                <constraint firstItem="Yy8-Fc-91m" firstAttribute="trailing" secondItem="McT-Qz-STE" secondAttribute="trailingMargin" id="f01-Lv-Er0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryLabel" destination="Yy8-Fc-91m" id="R2T-Rs-zXs"/>
+                                            <outlet property="userImageView" destination="9RR-Hx-Mde" id="bhh-Id-WCg"/>
+                                            <outlet property="username" destination="Xge-Vf-5Go" id="Ljf-p3-2oY"/>
+                                            <outlet property="usernameLabel" destination="IzJ-yn-Byl" id="QxQ-WW-hy9"/>
+                                            <segue destination="5bM-Da-3QL" kind="presentation" identifier="selectedUser" id="d60-NL-l8H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="450" id="9HH-LY-SDK" customClass="ImageTableViewCell" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="158" width="375" height="450"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9HH-LY-SDK" id="9Mc-My-w5z">
+                                            <frame key="frameInset" width="375" height="449"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="3C8-eZ-b3M" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="6sp-uJ-mjv"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-qC-IPP">
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="19"/>
+                                                    <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Post text goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E6u-v1-j9u">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="Gre-Ss-Lqd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZgP-aQ-CHn">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="k7J-OT-BMZ"/>
+                                                        <constraint firstAttribute="height" constant="19" id="tmq-eq-NN8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jLZ-91-1f6" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.50196078430000002" green="0.34901960780000002" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E35-RC-WVW">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="DA6-nb-kce"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qT-U7-PjI">
+                                                    <state key="normal" image="Dog Bone_000000_32"/>
+                                                    <connections>
+                                                        <action selector="postWasLiked:" destination="9HH-LY-SDK" eventType="touchUpInside" id="jDC-Jt-j79"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUZ-Bq-ClL">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hf-94-xgr">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="FCQ-87-edf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <state key="normal" title="Flag this post!">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="postWasFlagged:" destination="9HH-LY-SDK" eventType="touchUpInside" id="bVE-qa-usx"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a dog?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf5-ke-ekN">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="96" id="kM4-Bl-uiH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZgP-aQ-CHn" firstAttribute="top" secondItem="9Mc-My-w5z" secondAttribute="topMargin" constant="4" id="27K-Rx-1YF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3hf-94-xgr" secondAttribute="trailing" constant="8" id="2bN-Xm-JfX"/>
+                                                <constraint firstItem="jf5-ke-ekN" firstAttribute="baseline" secondItem="HUZ-Bq-ClL" secondAttribute="baseline" id="557-8w-GUk"/>
+                                                <constraint firstItem="3hf-94-xgr" firstAttribute="baseline" secondItem="jf5-ke-ekN" secondAttribute="baseline" id="6Cn-S7-Bzn"/>
+                                                <constraint firstItem="3C8-eZ-b3M" firstAttribute="top" secondItem="9Mc-My-w5z" secondAttribute="topMargin" id="6ad-Mi-jl2"/>
+                                                <constraint firstItem="3hf-94-xgr" firstAttribute="top" secondItem="E6u-v1-j9u" secondAttribute="bottom" constant="2" id="ApC-vu-Z2K"/>
+                                                <constraint firstItem="jLZ-91-1f6" firstAttribute="leading" secondItem="9Mc-My-w5z" secondAttribute="leadingMargin" constant="36" id="JRn-GW-mHb"/>
+                                                <constraint firstItem="HUZ-Bq-ClL" firstAttribute="top" secondItem="E6u-v1-j9u" secondAttribute="bottom" constant="13" id="JTl-Lx-gJG"/>
+                                                <constraint firstItem="ZgP-aQ-CHn" firstAttribute="trailing" secondItem="9Mc-My-w5z" secondAttribute="trailingMargin" id="Jlt-Me-nVE"/>
+                                                <constraint firstItem="XXp-qC-IPP" firstAttribute="leading" secondItem="3C8-eZ-b3M" secondAttribute="trailing" constant="8" symbolic="YES" id="L7U-H8-KWT"/>
+                                                <constraint firstItem="E35-RC-WVW" firstAttribute="top" secondItem="XXp-qC-IPP" secondAttribute="bottom" constant="7" id="Mi5-u9-rCv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3hf-94-xgr" secondAttribute="bottom" constant="6.5" id="PDR-5c-z6C"/>
+                                                <constraint firstItem="jLZ-91-1f6" firstAttribute="top" secondItem="E35-RC-WVW" secondAttribute="bottom" constant="8" symbolic="YES" id="SQb-Cs-77s"/>
+                                                <constraint firstItem="HUZ-Bq-ClL" firstAttribute="leading" secondItem="5qT-U7-PjI" secondAttribute="trailing" constant="15" id="WJD-s1-UBU"/>
+                                                <constraint firstItem="XXp-qC-IPP" firstAttribute="leading" secondItem="E35-RC-WVW" secondAttribute="leading" id="X2p-kU-eVT"/>
+                                                <constraint firstItem="3C8-eZ-b3M" firstAttribute="leading" secondItem="E6u-v1-j9u" secondAttribute="leading" id="cKv-4Z-ROK"/>
+                                                <constraint firstItem="3hf-94-xgr" firstAttribute="centerY" secondItem="HUZ-Bq-ClL" secondAttribute="centerY" id="eQG-sG-clT"/>
+                                                <constraint firstItem="5qT-U7-PjI" firstAttribute="top" secondItem="E6u-v1-j9u" secondAttribute="bottom" constant="7" id="ehb-o1-R14"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="E6u-v1-j9u" secondAttribute="bottom" constant="51" id="guX-0G-qT6"/>
+                                                <constraint firstItem="ZgP-aQ-CHn" firstAttribute="trailing" secondItem="E6u-v1-j9u" secondAttribute="trailing" id="hb3-jd-kYe"/>
+                                                <constraint firstItem="3C8-eZ-b3M" firstAttribute="leading" secondItem="9Mc-My-w5z" secondAttribute="leadingMargin" id="hoU-PD-SPk"/>
+                                                <constraint firstItem="XXp-qC-IPP" firstAttribute="bottom" secondItem="ZgP-aQ-CHn" secondAttribute="bottom" id="iTc-c4-czW"/>
+                                                <constraint firstItem="3hf-94-xgr" firstAttribute="firstBaseline" secondItem="jf5-ke-ekN" secondAttribute="baseline" id="jyu-YI-gQc"/>
+                                                <constraint firstItem="ZgP-aQ-CHn" firstAttribute="leading" secondItem="XXp-qC-IPP" secondAttribute="trailing" constant="9" id="kAr-tY-ZGe"/>
+                                                <constraint firstItem="jf5-ke-ekN" firstAttribute="leading" secondItem="HUZ-Bq-ClL" secondAttribute="trailing" constant="49.5" id="kn2-W3-fqa"/>
+                                                <constraint firstItem="jLZ-91-1f6" firstAttribute="top" secondItem="3C8-eZ-b3M" secondAttribute="bottom" constant="8" symbolic="YES" id="mjB-QL-GmH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jLZ-91-1f6" secondAttribute="trailing" constant="43" id="t1c-Wj-CUr"/>
+                                                <constraint firstItem="HUZ-Bq-ClL" firstAttribute="leading" secondItem="9Mc-My-w5z" secondAttribute="leading" constant="79" id="yxM-tW-yPn"/>
+                                                <constraint firstItem="E6u-v1-j9u" firstAttribute="top" secondItem="jLZ-91-1f6" secondAttribute="bottom" constant="-1" id="z8a-Ft-ShV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="E35-RC-WVW" secondAttribute="trailing" constant="30" id="zha-LJ-8f0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="flagButton" destination="3hf-94-xgr" id="ANy-s1-cks"/>
+                                            <outlet property="fullNameLabel" destination="XXp-qC-IPP" id="7YB-8X-yoB"/>
+                                            <outlet property="likeButton" destination="5qT-U7-PjI" id="UEP-4M-GGQ"/>
+                                            <outlet property="likeLabel" destination="HUZ-Bq-ClL" id="751-YW-HpD"/>
+                                            <outlet property="postImageView" destination="jLZ-91-1f6" id="4fM-NS-m97"/>
+                                            <outlet property="postTextView" destination="E6u-v1-j9u" id="Y37-Tw-jQn"/>
+                                            <outlet property="postTimeLabel" destination="ZgP-aQ-CHn" id="IrX-gV-sOM"/>
+                                            <outlet property="profileImageView" destination="3C8-eZ-b3M" id="QbF-5u-J1J"/>
+                                            <outlet property="usernameLabel" destination="E35-RC-WVW" id="wGl-jV-6tc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZYq-GO-ipP" id="XbB-xp-wu9"/>
+                                    <outlet property="delegate" destination="ZYq-GO-ipP" id="R7Y-l7-Udh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w0Z-Wm-Cti" firstAttribute="bottom" secondItem="phK-BW-5BQ" secondAttribute="top" id="M0U-Ac-Jyt"/>
+                            <constraint firstItem="w0Z-Wm-Cti" firstAttribute="trailing" secondItem="3XN-eQ-TP6" secondAttribute="trailing" id="Szd-kT-I5c"/>
+                            <constraint firstItem="3XN-eQ-TP6" firstAttribute="top" secondItem="Ufd-GI-FND" secondAttribute="top" id="Wv6-f9-fMA"/>
+                            <constraint firstAttribute="trailing" secondItem="3XN-eQ-TP6" secondAttribute="trailing" id="YdD-Xf-sm3"/>
+                            <constraint firstItem="w0Z-Wm-Cti" firstAttribute="top" secondItem="3XN-eQ-TP6" secondAttribute="bottom" constant="57" id="baA-JG-A6s"/>
+                            <constraint firstItem="3XN-eQ-TP6" firstAttribute="leading" secondItem="Ufd-GI-FND" secondAttribute="leading" id="igg-Vj-wWn"/>
+                            <constraint firstItem="w0Z-Wm-Cti" firstAttribute="leading" secondItem="3XN-eQ-TP6" secondAttribute="leading" id="sg0-uE-Hwe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F9S-A1-bV9"/>
+                    <connections>
+                        <outlet property="tableView" destination="w0Z-Wm-Cti" id="tH0-9h-v0T"/>
+                        <outlet property="userButton" destination="5Ba-Fc-9zF" id="a8K-QF-lO4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2l7-86-Y3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Selected User Profile View Controller-->
+        <scene sceneID="XFE-BL-a4T">
+            <objects>
+                <viewController id="5bM-Da-3QL" customClass="SelectedUserProfileViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="84b-4M-9Ee"/>
+                        <viewControllerLayoutGuide type="bottom" id="lSC-wM-Kdl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="524-Wl-6km">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-dt-Qct">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjT-53-xxB">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="bvJ-W3-Jtt"/>
+                                        </constraints>
+                                        <state key="normal" image="Cancel_ffffff_50"/>
+                                        <connections>
+                                            <segue destination="XRO-iD-S6o" kind="unwind" unwindAction="unwinedToHomeWithStoryboardSegue:" id="6g0-gG-w2R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JjT-53-xxB" firstAttribute="top" secondItem="ndL-dt-Qct" secondAttribute="top" constant="40" id="InL-l1-Nns"/>
+                                    <constraint firstItem="JjT-53-xxB" firstAttribute="bottom" secondItem="ndL-dt-Qct" secondAttribute="bottomMargin" id="czQ-Wa-SC2"/>
+                                    <constraint firstItem="JjT-53-xxB" firstAttribute="centerX" secondItem="ndL-dt-Qct" secondAttribute="centerX" id="rNK-yU-eUS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STR-cZ-vsl">
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="22"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="2oE-6m-xYZ" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="nkQ-eN-hHB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="64"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="346" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ekt-f5-QlM">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="407" id="7jD-DM-C2m"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="450" id="5KT-6g-XEs" customClass="ImageTableViewCell" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="450"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5KT-6g-XEs" id="p22-kH-gee">
+                                            <frame key="frameInset" width="375" height="449"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-vp-xbX" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="s5V-0k-aek"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5Y-kz-t6V">
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="19"/>
+                                                    <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Post text goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MTc-VU-gzH">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="4Nc-Xn-O5W"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-Y4-Ebe">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="9jr-Gq-stI"/>
+                                                        <constraint firstAttribute="width" constant="42" id="dKX-8W-MsX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-ez-iIK" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.50196078430000002" green="0.34901960780000002" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GU-sy-Aoe">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="zz7-Sw-6Kr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIF-Tp-1A3">
+                                                    <state key="normal" image="Dog Bone_000000_32"/>
+                                                    <connections>
+                                                        <action selector="postWasLiked:" destination="5KT-6g-XEs" eventType="touchUpInside" id="Qaq-mr-93F"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbr-7W-gIo">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pio-Iy-Ifa">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="1HA-xc-GOj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <state key="normal" title="Flag this post!">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="postWasFlagged:" destination="5KT-6g-XEs" eventType="touchUpInside" id="j0c-98-QM5"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a dog?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mih-Xc-NwT">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="96" id="bhg-OY-t8f"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C5Y-kz-t6V" firstAttribute="leading" secondItem="7GU-sy-Aoe" secondAttribute="leading" id="2YI-J8-C2k"/>
+                                                <constraint firstItem="pio-Iy-Ifa" firstAttribute="baseline" secondItem="mih-Xc-NwT" secondAttribute="baseline" id="6jd-MS-OCY"/>
+                                                <constraint firstItem="Xbg-Y4-Ebe" firstAttribute="top" secondItem="p22-kH-gee" secondAttribute="topMargin" constant="4" id="BWP-d1-WwQ"/>
+                                                <constraint firstItem="C5Y-kz-t6V" firstAttribute="leading" secondItem="qzc-vp-xbX" secondAttribute="trailing" constant="8" symbolic="YES" id="Dpz-bq-sU7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pLe-ez-iIK" secondAttribute="trailing" constant="43" id="Igp-YU-bCd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pio-Iy-Ifa" secondAttribute="bottom" constant="6.5" id="IoH-yg-jc0"/>
+                                                <constraint firstItem="qzc-vp-xbX" firstAttribute="top" secondItem="p22-kH-gee" secondAttribute="topMargin" id="KHe-RM-QDz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MTc-VU-gzH" secondAttribute="bottom" constant="51" id="Lfk-pp-IeT"/>
+                                                <constraint firstItem="qzc-vp-xbX" firstAttribute="leading" secondItem="MTc-VU-gzH" secondAttribute="leading" id="NUM-w9-EDi"/>
+                                                <constraint firstItem="pLe-ez-iIK" firstAttribute="leading" secondItem="p22-kH-gee" secondAttribute="leadingMargin" constant="36" id="NgA-ce-F9y"/>
+                                                <constraint firstItem="tbr-7W-gIo" firstAttribute="leading" secondItem="p22-kH-gee" secondAttribute="leading" constant="79" id="QC1-ud-K7h"/>
+                                                <constraint firstItem="tbr-7W-gIo" firstAttribute="top" secondItem="MTc-VU-gzH" secondAttribute="bottom" constant="13" id="Tzy-q0-3J4"/>
+                                                <constraint firstItem="Xbg-Y4-Ebe" firstAttribute="trailing" secondItem="MTc-VU-gzH" secondAttribute="trailing" id="WsE-A6-L7R"/>
+                                                <constraint firstItem="pLe-ez-iIK" firstAttribute="top" secondItem="7GU-sy-Aoe" secondAttribute="bottom" constant="8" symbolic="YES" id="ZAW-fH-agz"/>
+                                                <constraint firstItem="pio-Iy-Ifa" firstAttribute="centerY" secondItem="tbr-7W-gIo" secondAttribute="centerY" id="bJR-i3-KfM"/>
+                                                <constraint firstItem="pio-Iy-Ifa" firstAttribute="top" secondItem="MTc-VU-gzH" secondAttribute="bottom" constant="2" id="chr-tq-XGT"/>
+                                                <constraint firstItem="mih-Xc-NwT" firstAttribute="leading" secondItem="tbr-7W-gIo" secondAttribute="trailing" constant="49.5" id="dcj-AP-7TZ"/>
+                                                <constraint firstItem="tbr-7W-gIo" firstAttribute="leading" secondItem="nIF-Tp-1A3" secondAttribute="trailing" constant="15" id="eVw-Qc-ADo"/>
+                                                <constraint firstItem="Xbg-Y4-Ebe" firstAttribute="leading" secondItem="C5Y-kz-t6V" secondAttribute="trailing" constant="9" id="eWP-xe-6bF"/>
+                                                <constraint firstItem="C5Y-kz-t6V" firstAttribute="bottom" secondItem="Xbg-Y4-Ebe" secondAttribute="bottom" id="jeX-12-Ct3"/>
+                                                <constraint firstItem="pio-Iy-Ifa" firstAttribute="firstBaseline" secondItem="mih-Xc-NwT" secondAttribute="baseline" id="kOz-zs-aYv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pio-Iy-Ifa" secondAttribute="trailing" constant="8" id="lke-4Y-Vkr"/>
+                                                <constraint firstItem="Xbg-Y4-Ebe" firstAttribute="trailing" secondItem="p22-kH-gee" secondAttribute="trailingMargin" id="mli-y0-1iz"/>
+                                                <constraint firstItem="nIF-Tp-1A3" firstAttribute="top" secondItem="MTc-VU-gzH" secondAttribute="bottom" constant="7" id="ovz-i7-bUz"/>
+                                                <constraint firstItem="qzc-vp-xbX" firstAttribute="leading" secondItem="p22-kH-gee" secondAttribute="leadingMargin" id="qQ7-XL-eqO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7GU-sy-Aoe" secondAttribute="trailing" constant="30" id="rki-jD-8vH"/>
+                                                <constraint firstItem="mih-Xc-NwT" firstAttribute="baseline" secondItem="tbr-7W-gIo" secondAttribute="baseline" id="ujb-Ck-6GV"/>
+                                                <constraint firstItem="MTc-VU-gzH" firstAttribute="top" secondItem="pLe-ez-iIK" secondAttribute="bottom" constant="-1" id="wa4-4X-q9T"/>
+                                                <constraint firstItem="pLe-ez-iIK" firstAttribute="top" secondItem="qzc-vp-xbX" secondAttribute="bottom" constant="8" symbolic="YES" id="xMD-eY-wiN"/>
+                                                <constraint firstItem="7GU-sy-Aoe" firstAttribute="top" secondItem="C5Y-kz-t6V" secondAttribute="bottom" constant="7" id="xXj-cK-vGo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="flagButton" destination="pio-Iy-Ifa" id="Ki5-Au-MYT"/>
+                                            <outlet property="fullNameLabel" destination="C5Y-kz-t6V" id="raL-1p-RbP"/>
+                                            <outlet property="likeButton" destination="nIF-Tp-1A3" id="LbH-W1-jHT"/>
+                                            <outlet property="likeLabel" destination="tbr-7W-gIo" id="7E3-WG-5RF"/>
+                                            <outlet property="postImageView" destination="pLe-ez-iIK" id="ELb-Df-0gK"/>
+                                            <outlet property="postTextView" destination="MTc-VU-gzH" id="7LN-m6-2xt"/>
+                                            <outlet property="postTimeLabel" destination="Xbg-Y4-Ebe" id="Yj8-Gb-uqH"/>
+                                            <outlet property="profileImageView" destination="qzc-vp-xbX" id="KaC-z1-01a"/>
+                                            <outlet property="usernameLabel" destination="7GU-sy-Aoe" id="sld-5O-ZzE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5bM-Da-3QL" id="RjO-Jx-dwN"/>
+                                    <outlet property="delegate" destination="5bM-Da-3QL" id="lz2-9P-U7E"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gur-8y-3s0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="LzE-Mq-Uhe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="22"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P71-O5-TDf" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <color key="textColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2oE-6m-xYZ" firstAttribute="leading" secondItem="524-Wl-6km" secondAttribute="leadingMargin" id="66p-XM-MIM"/>
+                            <constraint firstItem="ekt-f5-QlM" firstAttribute="top" secondItem="P71-O5-TDf" secondAttribute="bottom" constant="8" symbolic="YES" id="9zl-2Z-YDX"/>
+                            <constraint firstItem="ndL-dt-Qct" firstAttribute="leading" secondItem="ekt-f5-QlM" secondAttribute="leading" id="AWc-HT-pWd"/>
+                            <constraint firstItem="ekt-f5-QlM" firstAttribute="top" secondItem="gur-8y-3s0" secondAttribute="bottom" constant="54" id="C6Y-FD-Pif"/>
+                            <constraint firstItem="gur-8y-3s0" firstAttribute="centerX" secondItem="P71-O5-TDf" secondAttribute="centerX" id="Est-EP-R0j"/>
+                            <constraint firstItem="P71-O5-TDf" firstAttribute="top" secondItem="STR-cZ-vsl" secondAttribute="bottom" constant="33" id="Gnl-hB-AbG"/>
+                            <constraint firstItem="ndL-dt-Qct" firstAttribute="top" secondItem="524-Wl-6km" secondAttribute="top" id="HC0-El-BNr"/>
+                            <constraint firstItem="STR-cZ-vsl" firstAttribute="trailing" secondItem="524-Wl-6km" secondAttribute="trailingMargin" id="HSx-Vw-6Iz"/>
+                            <constraint firstItem="P71-O5-TDf" firstAttribute="leading" secondItem="2oE-6m-xYZ" secondAttribute="trailing" constant="15" id="Ipw-ng-ibz"/>
+                            <constraint firstAttribute="trailing" secondItem="ndL-dt-Qct" secondAttribute="trailing" id="NyI-Bz-hWr"/>
+                            <constraint firstItem="ndL-dt-Qct" firstAttribute="leading" secondItem="524-Wl-6km" secondAttribute="leading" id="Tyi-sW-lMc"/>
+                            <constraint firstItem="STR-cZ-vsl" firstAttribute="leading" secondItem="2oE-6m-xYZ" secondAttribute="trailing" constant="7" id="ZKN-Cj-O5m"/>
+                            <constraint firstItem="ndL-dt-Qct" firstAttribute="trailing" secondItem="ekt-f5-QlM" secondAttribute="trailing" id="axN-f6-7RW"/>
+                            <constraint firstItem="ekt-f5-QlM" firstAttribute="top" secondItem="2oE-6m-xYZ" secondAttribute="bottom" constant="8" symbolic="YES" id="fHN-JJ-PO4"/>
+                            <constraint firstItem="gur-8y-3s0" firstAttribute="top" secondItem="STR-cZ-vsl" secondAttribute="bottom" constant="1" id="h0S-VJ-MOy"/>
+                            <constraint firstItem="ekt-f5-QlM" firstAttribute="bottom" secondItem="lSC-wM-Kdl" secondAttribute="top" id="hug-WC-Smq"/>
+                            <constraint firstItem="2oE-6m-xYZ" firstAttribute="top" secondItem="ndL-dt-Qct" secondAttribute="bottom" constant="34" id="iFW-HL-4d8"/>
+                            <constraint firstItem="STR-cZ-vsl" firstAttribute="trailing" secondItem="gur-8y-3s0" secondAttribute="trailing" id="ici-7H-PAI"/>
+                            <constraint firstItem="2oE-6m-xYZ" firstAttribute="centerY" secondItem="gur-8y-3s0" secondAttribute="centerY" id="o5N-7u-ARu"/>
+                            <constraint firstItem="STR-cZ-vsl" firstAttribute="leading" secondItem="gur-8y-3s0" secondAttribute="leading" id="tjU-Ox-uFt"/>
+                            <constraint firstItem="2oE-6m-xYZ" firstAttribute="top" secondItem="STR-cZ-vsl" secondAttribute="top" id="u1i-LA-5hE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstNameLabel" destination="STR-cZ-vsl" id="43u-pL-hsY"/>
+                        <outlet property="lastNameLabel" destination="gur-8y-3s0" id="Vb9-TV-j1h"/>
+                        <outlet property="selectedUserImageView" destination="2oE-6m-xYZ" id="Iyv-bo-Tzw"/>
+                        <outlet property="selectedUserTableView" destination="ekt-f5-QlM" id="h6t-dH-OeS"/>
+                        <outlet property="usernameTextField" destination="P71-O5-TDf" id="SBt-vq-eMW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5QD-Ku-sf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XRO-iD-S6o" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1773.5999999999999" y="-605.84707646176912"/>
+        </scene>
+        <!--User Profile View Controller-->
+        <scene sceneID="AvD-kg-Zxb">
+            <objects>
+                <viewController id="8eo-Fz-KC4" customClass="UserProfileViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aOJ-jv-aSj"/>
+                        <viewControllerLayoutGuide type="bottom" id="tb4-Ju-ug0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kfm-f7-uzc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9p-UD-UaS">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmX-jb-IHm">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="sOl-9I-LlB"/>
+                                            <constraint firstAttribute="width" constant="46" id="v41-ea-l4w"/>
+                                        </constraints>
+                                        <state key="normal" image="Cancel_ffffff_50"/>
+                                        <connections>
+                                            <segue destination="yVw-hd-T0L" kind="unwind" unwindAction="unwinedToHomeWithStoryboardSegue:" id="eu1-e9-gCc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RmX-jb-IHm" secondAttribute="bottom" constant="8" id="2Wz-RT-8sL"/>
+                                    <constraint firstItem="RmX-jb-IHm" firstAttribute="centerX" secondItem="O9p-UD-UaS" secondAttribute="centerX" id="DJP-Id-MLw"/>
+                                    <constraint firstAttribute="height" constant="90" id="ItW-wq-jwB"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Firstname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFi-wk-3Pq" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hWd-cY-j0I"/>
+                                </constraints>
+                                <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LastName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJW-54-nhT" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="qzT-ka-oFb"/>
+                                </constraints>
+                                <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svg-9j-GOG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="3a0-xy-CXA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="41r-Jk-8cE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="FKK-w3-IBn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="s6A-qY-8gi" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="vYe-Fq-4fC"/>
+                                    <constraint firstAttribute="width" constant="128" id="yS4-2w-Nmb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="64"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="m9B-5l-7nO">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="450" id="ETP-R3-J8Z" customClass="ImageTableViewCell" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="450"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETP-R3-J8Z" id="Umc-VO-ZE1">
+                                            <frame key="frameInset" width="375" height="449"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="zMB-8t-ACv" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="58h-cN-EpS"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ub6-5q-OOn">
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-SemiBold" family="Titillium Web" pointSize="19"/>
+                                                    <color key="textColor" red="0.23529411759999999" green="0.35294117650000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Post text goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w7j-0Y-rj6">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="qZE-oB-kz6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vcp-ZP-g8W">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="BOZ-Nz-sPf"/>
+                                                        <constraint firstAttribute="width" constant="42" id="zak-NX-VFF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHW-ud-8lC" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.50196078430000002" green="0.34901960780000002" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzm-kA-4FL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="GiH-EZ-lt7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvC-hj-HLh">
+                                                    <state key="normal" image="Dog Bone_000000_32"/>
+                                                    <connections>
+                                                        <action selector="postWasLiked:" destination="ETP-R3-J8Z" eventType="touchUpInside" id="7mn-OW-Y1k"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6S-ea-STp">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7N5-vA-OCu">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="Ozi-Zq-cAs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <state key="normal" title="Flag this post!">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="postWasFlagged:" destination="ETP-R3-J8Z" eventType="touchUpInside" id="b5K-FT-gMr"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a dog?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdL-FO-EBy">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="96" id="CC1-Zq-JJd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7N5-vA-OCu" firstAttribute="firstBaseline" secondItem="TdL-FO-EBy" secondAttribute="baseline" id="1cx-bX-uRc"/>
+                                                <constraint firstItem="7N5-vA-OCu" firstAttribute="centerY" secondItem="r6S-ea-STp" secondAttribute="centerY" id="432-Nb-iBS"/>
+                                                <constraint firstItem="Ub6-5q-OOn" firstAttribute="leading" secondItem="xzm-kA-4FL" secondAttribute="leading" id="4MI-51-62a"/>
+                                                <constraint firstItem="r6S-ea-STp" firstAttribute="leading" secondItem="Umc-VO-ZE1" secondAttribute="leading" constant="79" id="4ej-fB-AIG"/>
+                                                <constraint firstItem="vcp-ZP-g8W" firstAttribute="trailing" secondItem="Umc-VO-ZE1" secondAttribute="trailingMargin" id="69i-oq-x3F"/>
+                                                <constraint firstItem="zMB-8t-ACv" firstAttribute="leading" secondItem="w7j-0Y-rj6" secondAttribute="leading" id="6aX-oT-AHz"/>
+                                                <constraint firstItem="w7j-0Y-rj6" firstAttribute="top" secondItem="FHW-ud-8lC" secondAttribute="bottom" constant="-1" id="81F-TY-jpP"/>
+                                                <constraint firstItem="TdL-FO-EBy" firstAttribute="leading" secondItem="r6S-ea-STp" secondAttribute="trailing" constant="49.5" id="8Io-Cr-xxT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7N5-vA-OCu" secondAttribute="trailing" constant="8" id="8kt-Dg-jfE"/>
+                                                <constraint firstItem="r6S-ea-STp" firstAttribute="leading" secondItem="OvC-hj-HLh" secondAttribute="trailing" constant="15" id="9a4-b2-rcs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xzm-kA-4FL" secondAttribute="trailing" constant="30" id="BPe-DI-oC7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7N5-vA-OCu" secondAttribute="bottom" constant="6.5" id="CGA-LI-9A1"/>
+                                                <constraint firstItem="OvC-hj-HLh" firstAttribute="top" secondItem="w7j-0Y-rj6" secondAttribute="bottom" constant="7" id="DXk-GA-dal"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w7j-0Y-rj6" secondAttribute="bottom" constant="51" id="Dad-bt-wpe"/>
+                                                <constraint firstItem="vcp-ZP-g8W" firstAttribute="leading" secondItem="Ub6-5q-OOn" secondAttribute="trailing" constant="9" id="ERE-1M-ePr"/>
+                                                <constraint firstItem="TdL-FO-EBy" firstAttribute="baseline" secondItem="r6S-ea-STp" secondAttribute="baseline" id="JCV-wL-ywF"/>
+                                                <constraint firstItem="r6S-ea-STp" firstAttribute="top" secondItem="w7j-0Y-rj6" secondAttribute="bottom" constant="13" id="JY2-iB-DGd"/>
+                                                <constraint firstItem="Ub6-5q-OOn" firstAttribute="leading" secondItem="zMB-8t-ACv" secondAttribute="trailing" constant="8" symbolic="YES" id="LyA-Lc-wZn"/>
+                                                <constraint firstItem="FHW-ud-8lC" firstAttribute="top" secondItem="xzm-kA-4FL" secondAttribute="bottom" constant="8" symbolic="YES" id="McS-XB-p2E"/>
+                                                <constraint firstItem="zMB-8t-ACv" firstAttribute="top" secondItem="Umc-VO-ZE1" secondAttribute="topMargin" id="Ufm-z2-xDW"/>
+                                                <constraint firstItem="FHW-ud-8lC" firstAttribute="top" secondItem="zMB-8t-ACv" secondAttribute="bottom" constant="8" symbolic="YES" id="W5Z-8p-rv3"/>
+                                                <constraint firstItem="Ub6-5q-OOn" firstAttribute="bottom" secondItem="vcp-ZP-g8W" secondAttribute="bottom" id="b8n-Fd-Hnx"/>
+                                                <constraint firstItem="vcp-ZP-g8W" firstAttribute="trailing" secondItem="w7j-0Y-rj6" secondAttribute="trailing" id="caR-od-4n8"/>
+                                                <constraint firstItem="xzm-kA-4FL" firstAttribute="top" secondItem="Ub6-5q-OOn" secondAttribute="bottom" constant="7" id="dtk-Y8-gCN"/>
+                                                <constraint firstItem="7N5-vA-OCu" firstAttribute="baseline" secondItem="TdL-FO-EBy" secondAttribute="baseline" id="hgX-Rn-Qds"/>
+                                                <constraint firstItem="vcp-ZP-g8W" firstAttribute="top" secondItem="Umc-VO-ZE1" secondAttribute="topMargin" constant="4" id="jCU-7X-D9a"/>
+                                                <constraint firstItem="7N5-vA-OCu" firstAttribute="top" secondItem="w7j-0Y-rj6" secondAttribute="bottom" constant="2" id="ugo-kA-WtT"/>
+                                                <constraint firstItem="FHW-ud-8lC" firstAttribute="leading" secondItem="Umc-VO-ZE1" secondAttribute="leadingMargin" constant="36" id="wBw-cw-1QL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FHW-ud-8lC" secondAttribute="trailing" constant="43" id="x4c-Lf-pBA"/>
+                                                <constraint firstItem="zMB-8t-ACv" firstAttribute="leading" secondItem="Umc-VO-ZE1" secondAttribute="leadingMargin" id="yGq-Yt-Adp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="flagButton" destination="7N5-vA-OCu" id="ib4-F4-m4S"/>
+                                            <outlet property="fullNameLabel" destination="Ub6-5q-OOn" id="qVg-3E-mt6"/>
+                                            <outlet property="likeButton" destination="OvC-hj-HLh" id="iRb-Py-kr7"/>
+                                            <outlet property="likeLabel" destination="r6S-ea-STp" id="gwe-2U-tFN"/>
+                                            <outlet property="postImageView" destination="FHW-ud-8lC" id="qe8-4r-E4L"/>
+                                            <outlet property="postTextView" destination="w7j-0Y-rj6" id="5I1-jx-YO2"/>
+                                            <outlet property="postTimeLabel" destination="vcp-ZP-g8W" id="25q-OA-rvW"/>
+                                            <outlet property="profileImageView" destination="zMB-8t-ACv" id="GTc-e3-Uht"/>
+                                            <outlet property="usernameLabel" destination="xzm-kA-4FL" id="G3i-px-4be"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8eo-Fz-KC4" id="Lc3-1s-h38"/>
+                                    <outlet property="delegate" destination="8eo-Fz-KC4" id="KNh-Op-7zv"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWN-eX-Rbz" customClass="CustomizableTextfield" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uyH-xe-7Ze"/>
+                                </constraints>
+                                <color key="textColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qFi-wk-3Pq" firstAttribute="leading" secondItem="s6A-qY-8gi" secondAttribute="trailing" constant="8" id="3aA-RL-brQ"/>
+                            <constraint firstItem="DJW-54-nhT" firstAttribute="leading" secondItem="s6A-qY-8gi" secondAttribute="trailing" constant="8" id="JFI-F4-qaz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qFi-wk-3Pq" secondAttribute="trailing" constant="15" id="KcC-AV-aZR"/>
+                            <constraint firstItem="TWN-eX-Rbz" firstAttribute="top" secondItem="DJW-54-nhT" secondAttribute="bottom" constant="8" symbolic="YES" id="Mmy-3W-PQy"/>
+                            <constraint firstItem="s6A-qY-8gi" firstAttribute="top" secondItem="O9p-UD-UaS" secondAttribute="bottom" constant="34" id="NOP-Mi-ZY7"/>
+                            <constraint firstItem="svg-9j-GOG" firstAttribute="leading" secondItem="kfm-f7-uzc" secondAttribute="leadingMargin" id="QuM-r8-5mt"/>
+                            <constraint firstItem="O9p-UD-UaS" firstAttribute="top" secondItem="kfm-f7-uzc" secondAttribute="top" id="QxI-Bq-0Es"/>
+                            <constraint firstItem="41r-Jk-8cE" firstAttribute="top" secondItem="svg-9j-GOG" secondAttribute="bottom" constant="8" id="Unq-uX-aUx"/>
+                            <constraint firstItem="TWN-eX-Rbz" firstAttribute="leading" secondItem="DJW-54-nhT" secondAttribute="leading" id="WjQ-Rl-fJm"/>
+                            <constraint firstItem="svg-9j-GOG" firstAttribute="top" secondItem="DJW-54-nhT" secondAttribute="bottom" constant="66" id="ZUk-gI-aJX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DJW-54-nhT" secondAttribute="trailing" constant="15" id="cQY-yh-qSd"/>
+                            <constraint firstItem="m9B-5l-7nO" firstAttribute="trailing" secondItem="O9p-UD-UaS" secondAttribute="trailing" id="eSv-23-Xen"/>
+                            <constraint firstItem="m9B-5l-7nO" firstAttribute="leading" secondItem="O9p-UD-UaS" secondAttribute="leading" id="ea1-3U-RUv"/>
+                            <constraint firstItem="41r-Jk-8cE" firstAttribute="trailing" secondItem="kfm-f7-uzc" secondAttribute="trailingMargin" id="g3R-zh-bA4"/>
+                            <constraint firstAttribute="trailing" secondItem="O9p-UD-UaS" secondAttribute="trailing" id="iGn-BD-i1o"/>
+                            <constraint firstItem="DJW-54-nhT" firstAttribute="top" secondItem="qFi-wk-3Pq" secondAttribute="bottom" constant="8" id="lLz-Xi-Lkx"/>
+                            <constraint firstItem="svg-9j-GOG" firstAttribute="trailing" secondItem="kfm-f7-uzc" secondAttribute="trailingMargin" id="lSn-2K-yVy"/>
+                            <constraint firstItem="TWN-eX-Rbz" firstAttribute="trailing" secondItem="DJW-54-nhT" secondAttribute="trailing" id="nbJ-uN-PdF"/>
+                            <constraint firstItem="s6A-qY-8gi" firstAttribute="leading" secondItem="kfm-f7-uzc" secondAttribute="leadingMargin" id="ohz-gw-K8f"/>
+                            <constraint firstItem="m9B-5l-7nO" firstAttribute="top" secondItem="41r-Jk-8cE" secondAttribute="bottom" constant="8" id="pAY-d9-5P2"/>
+                            <constraint firstItem="m9B-5l-7nO" firstAttribute="bottom" secondItem="tb4-Ju-ug0" secondAttribute="top" id="sU1-Bm-qOd"/>
+                            <constraint firstItem="O9p-UD-UaS" firstAttribute="leading" secondItem="kfm-f7-uzc" secondAttribute="leading" id="tv4-rj-zfB"/>
+                            <constraint firstItem="41r-Jk-8cE" firstAttribute="leading" secondItem="kfm-f7-uzc" secondAttribute="leadingMargin" id="ust-t0-lBa"/>
+                            <constraint firstItem="qFi-wk-3Pq" firstAttribute="top" secondItem="O9p-UD-UaS" secondAttribute="bottom" constant="8" id="zMT-eH-MH0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countryLabel" destination="41r-Jk-8cE" id="F4T-EH-irq"/>
+                        <outlet property="currentUserTableView" destination="m9B-5l-7nO" id="up7-76-yGk"/>
+                        <outlet property="emailLabel" destination="svg-9j-GOG" id="zyn-fr-orh"/>
+                        <outlet property="firstNameTextField" destination="qFi-wk-3Pq" id="kM2-tv-aE3"/>
+                        <outlet property="lastNameTextField" destination="DJW-54-nhT" id="2Pm-lY-QLJ"/>
+                        <outlet property="userProfileImageView" destination="s6A-qY-8gi" id="DCZ-wz-Lsb"/>
+                        <outlet property="usernameTextField" destination="TWN-eX-Rbz" id="FNV-wA-luo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhC-Xm-Siw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yVw-hd-T0L" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="-639.13043478260875"/>
+        </scene>
+        <!--Add Post View Controller-->
+        <scene sceneID="yjU-Xs-pVF">
+            <objects>
+                <viewController id="e6l-C8-grj" customClass="AddPostViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t78-5a-LcW"/>
+                        <viewControllerLayoutGuide type="bottom" id="0ET-0z-pxD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSI-4F-LO0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwU-U8-Vsq">
+                                <state key="normal" image="Cancel_ffffff_50"/>
+                                <connections>
+                                    <segue destination="2xC-qk-PUB" kind="unwind" unwindAction="unwinedToHomeWithStoryboardSegue:" id="uhT-X1-U7R"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LfV-L3-Rtb" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="snl-Jr-YJg" appends="YES" id="2ug-cV-s0E"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2c-iJ-chp" customClass="CustomizableButton" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.50196078431372548" green="0.34901960784313724" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="Eb8-ZL-ZGu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Bold" family="Titillium Web" pointSize="17"/>
+                                <state key="normal" title="POST">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="savePost:" destination="e6l-C8-grj" eventType="touchUpInside" id="rPu-Bk-jcg"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's up?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Ct-3x-hH2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="8fF-bw-Ipe"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Regular" family="Titillium Web" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoL-ZZ-ri4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="4uh-79-arn"/>
+                                    <constraint firstAttribute="height" constant="26" id="i4h-Lw-eZy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Bold" family="Titillium Web" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktp-Iq-5eo" customClass="CustomizableButton" customModule="Doggiverse_2_0" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.50196078431372548" green="0.34901960784313724" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="cCs-OX-eXP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TitilliumWeb-Bold" family="Titillium Web" pointSize="17"/>
+                                <state key="normal" title="MAKE A MEME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="savePost:" destination="e6l-C8-grj" eventType="touchUpInside" id="NLd-ku-XKI"/>
+                                    <segue destination="jGh-xg-QPA" kind="presentation" id="Fhw-ii-vOI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IoL-ZZ-ri4" firstAttribute="leading" secondItem="jSI-4F-LO0" secondAttribute="leadingMargin" constant="13" id="1wv-3C-UTC"/>
+                            <constraint firstItem="LfV-L3-Rtb" firstAttribute="trailing" secondItem="jSI-4F-LO0" secondAttribute="trailingMargin" id="9Ch-p8-NHo"/>
+                            <constraint firstItem="LfV-L3-Rtb" firstAttribute="leading" secondItem="jSI-4F-LO0" secondAttribute="leadingMargin" id="BMM-Gc-fZX"/>
+                            <constraint firstItem="LfV-L3-Rtb" firstAttribute="leading" secondItem="5Ct-3x-hH2" secondAttribute="leading" id="E3r-cG-0vQ"/>
+                            <constraint firstItem="wwU-U8-Vsq" firstAttribute="leading" secondItem="jSI-4F-LO0" secondAttribute="leadingMargin" constant="4" id="EYY-Z5-jSs"/>
+                            <constraint firstItem="wwU-U8-Vsq" firstAttribute="top" secondItem="t78-5a-LcW" secondAttribute="bottom" constant="4" id="FVP-IO-hIs"/>
+                            <constraint firstItem="5Ct-3x-hH2" firstAttribute="top" secondItem="LfV-L3-Rtb" secondAttribute="bottom" constant="22" id="O7D-hg-PWf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S2c-iJ-chp" secondAttribute="trailing" constant="24" id="Vuy-c5-eFp"/>
+                            <constraint firstItem="LfV-L3-Rtb" firstAttribute="trailing" secondItem="5Ct-3x-hH2" secondAttribute="trailing" id="cTj-te-kwV"/>
+                            <constraint firstItem="0ET-0z-pxD" firstAttribute="top" secondItem="S2c-iJ-chp" secondAttribute="bottom" constant="69" id="cgX-r4-cca"/>
+                            <constraint firstItem="ktp-Iq-5eo" firstAttribute="leading" secondItem="jSI-4F-LO0" secondAttribute="leadingMargin" constant="86" id="ewM-ml-4Hb"/>
+                            <constraint firstItem="IoL-ZZ-ri4" firstAttribute="top" secondItem="5Ct-3x-hH2" secondAttribute="bottom" constant="21" id="lvo-Ih-kG9"/>
+                            <constraint firstItem="0ET-0z-pxD" firstAttribute="top" secondItem="IoL-ZZ-ri4" secondAttribute="bottom" constant="73" id="pwN-5p-7P2"/>
+                            <constraint firstAttribute="bottom" secondItem="ktp-Iq-5eo" secondAttribute="bottom" constant="20" symbolic="YES" id="sga-A6-NeK"/>
+                            <constraint firstItem="IoL-ZZ-ri4" firstAttribute="top" secondItem="S2c-iJ-chp" secondAttribute="top" id="xvv-Os-BDR"/>
+                            <constraint firstItem="LfV-L3-Rtb" firstAttribute="top" secondItem="wwU-U8-Vsq" secondAttribute="bottom" constant="23" id="yEi-zk-nuu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="charactersLabel" destination="IoL-ZZ-ri4" id="gin-E5-8ks"/>
+                        <outlet property="postButton" destination="S2c-iJ-chp" id="8ym-d6-h2U"/>
+                        <outlet property="postImageView" destination="LfV-L3-Rtb" id="fsU-IB-qe1"/>
+                        <outlet property="postTextField" destination="5Ct-3x-hH2" id="2Cy-yS-lTc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mhN-1D-fdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2xC-qk-PUB" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="snl-Jr-YJg">
+                    <connections>
+                        <action selector="selectPicture:" destination="e6l-C8-grj" id="brE-rl-tJQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2548" y="138.98050974512745"/>
+        </scene>
+        <!--memeEditorViewController-->
+        <scene sceneID="GBP-G3-Eul">
+            <objects>
+                <viewController storyboardIdentifier="memeEditorViewController" title="memeEditorViewController" id="jGh-xg-QPA" customClass="ViewController" customModule="Doggiverse_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o6u-2S-jed"/>
+                        <viewControllerLayoutGuide type="bottom" id="hhg-Z3-fA0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jgu-XR-ZUS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0r-9x-EFf">
+                                <items>
+                                    <barButtonItem title="Album" style="plain" id="sFz-8z-THk">
+                                        <connections>
+                                            <action selector="pickAnImage:" destination="jGh-xg-QPA" id="jul-Kb-hQg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="n3i-Lk-WnI"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="xQZ-85-YrC">
+                                        <connections>
+                                            <action selector="getImageFromCamera:" destination="jGh-xg-QPA" id="1uN-GJ-GWk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar alpha="0.64999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXy-cL-INU" userLabel="navBar">
+                                <items>
+                                    <navigationItem title="Make a Meme" id="1Ia-nD-n81">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="1dI-W2-EtW">
+                                            <connections>
+                                                <action selector="editorDidCancel:" destination="jGh-xg-QPA" id="JJ4-oI-3oM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="M4H-H1-aAg">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="jGh-xg-QPA" id="1sJ-Bz-8ce"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gy5-RL-zZE" userLabel="Image Picker View">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="366" id="B7d-fk-TSH"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="Xyc-cq-89j">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="kKJ-wz-aSx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-ru-bGD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="5Kh-nc-FCR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22598233819999999" green="0.26997274160000001" blue="0.31164509060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="p0r-9x-EFf" secondAttribute="trailing" constant="-20" id="7nW-TG-KbR"/>
+                            <constraint firstItem="qXy-cL-INU" firstAttribute="leading" secondItem="Jgu-XR-ZUS" secondAttribute="leadingMargin" constant="-20" id="Dhg-4U-CEA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xyc-cq-89j" secondAttribute="trailing" constant="52" id="GqO-hx-H8a"/>
+                            <constraint firstItem="Xyc-cq-89j" firstAttribute="trailing" secondItem="Gp2-ru-bGD" secondAttribute="trailing" id="SiI-Qz-bQc"/>
+                            <constraint firstItem="Xyc-cq-89j" firstAttribute="leading" secondItem="Gp2-ru-bGD" secondAttribute="leading" id="cjm-BF-6TI"/>
+                            <constraint firstAttribute="bottom" secondItem="Xyc-cq-89j" secondAttribute="bottom" constant="215" id="dzT-X5-dIg"/>
+                            <constraint firstItem="p0r-9x-EFf" firstAttribute="leading" secondItem="Jgu-XR-ZUS" secondAttribute="leadingMargin" constant="-20" id="fNO-pi-Z2I"/>
+                            <constraint firstItem="Gy5-RL-zZE" firstAttribute="top" secondItem="qXy-cL-INU" secondAttribute="bottom" constant="75" id="fiO-nA-4fw"/>
+                            <constraint firstItem="qXy-cL-INU" firstAttribute="top" secondItem="o6u-2S-jed" secondAttribute="bottom" id="mvQ-2L-h5d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qXy-cL-INU" secondAttribute="trailing" constant="-20" id="r77-fF-wlr"/>
+                            <constraint firstItem="hhg-Z3-fA0" firstAttribute="top" secondItem="p0r-9x-EFf" secondAttribute="bottom" id="sFA-wU-2br"/>
+                            <constraint firstItem="Xyc-cq-89j" firstAttribute="top" secondItem="Gy5-RL-zZE" secondAttribute="bottom" constant="-102" id="tPx-Xn-9h4"/>
+                            <constraint firstItem="Gp2-ru-bGD" firstAttribute="top" secondItem="Jgu-XR-ZUS" secondAttribute="top" constant="186" id="tRC-bx-enS"/>
+                            <constraint firstItem="Gy5-RL-zZE" firstAttribute="centerX" secondItem="qXy-cL-INU" secondAttribute="centerX" id="tYQ-KA-g23"/>
+                            <constraint firstItem="Xyc-cq-89j" firstAttribute="leading" secondItem="Jgu-XR-ZUS" secondAttribute="leadingMargin" constant="56" id="uSS-mX-ARF"/>
+                            <constraint firstItem="Gy5-RL-zZE" firstAttribute="top" secondItem="Gp2-ru-bGD" secondAttribute="bottom" constant="-101" id="v4a-pm-9Na"/>
+                            <constraint firstItem="Gy5-RL-zZE" firstAttribute="leading" secondItem="Jgu-XR-ZUS" secondAttribute="leading" id="xKx-l4-Ehl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="M4H-H1-aAg" id="YiE-IX-Xbv"/>
+                        <outlet property="cameraButton" destination="xQZ-85-YrC" id="JCV-0i-XiE"/>
+                        <outlet property="cancelButton" destination="1dI-W2-EtW" id="X3d-SO-cqZ"/>
+                        <outlet property="imagePickerView" destination="Gy5-RL-zZE" id="xHo-na-Tnt"/>
+                        <outlet property="navBar" destination="qXy-cL-INU" id="4di-wB-W9t"/>
+                        <outlet property="textFieldBottom" destination="Xyc-cq-89j" id="C7u-XZ-QGS"/>
+                        <outlet property="textFieldTop" destination="Gp2-ru-bGD" id="g4b-5c-AlM"/>
+                        <outlet property="toolBar" destination="p0r-9x-EFf" id="wuz-bb-Axy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coF-o5-TWR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2548" y="-639.13043478260875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Add Camera" width="40" height="40"/>
+        <image name="Cancel_ffffff_50" width="40" height="40"/>
+        <image name="Dog Bone_000000_32" width="40" height="40"/>
+        <image name="Doggy_Head" width="90" height="90"/>
+        <image name="silhouettes" width="3008" height="1960"/>
+        <image name="squinty_lab" width="3884" height="2913"/>
+    </resources>
 </document>
