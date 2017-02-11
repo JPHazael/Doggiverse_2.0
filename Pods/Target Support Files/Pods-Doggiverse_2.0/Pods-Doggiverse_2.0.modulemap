@@ -1,0 +1,6 @@
+framework module Pods_Doggiverse_2_0 {
+  umbrella header "Pods-Doggiverse_2.0-umbrella.h"
+
+  export *
+  module * { export * }
+}
