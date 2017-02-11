@@ -41,12 +41,16 @@ class SelectedUserProfileViewController: UIViewController, UITableViewDelegate, 
     func fetchSelectedUser(){
         FirebaseClient.sharedInstance.fetchSelectedUserInfo(ref: ref) { (user) in
             
+            if user.uid == nil{
+                let alert = SCLAlertView()
+                _ = alert.showError("OOPS", subTitle: "There was an error fetching the user info.")
+            }else{
+            
             self.firstNameLabel.text = user.firstName
             self.lastNameLabel.text = user.lastName
             self.usernameTextField.text = "@\(user.username!)"
             
             self.selectedUser = user
-            print(self.selectedUser.uid)
             
             let profileResource = ImageResource(downloadURL: URL(string: self.selectedUser.profilePictureURL)!, cacheKey: self.selectedUser.profilePictureURL)
             
@@ -59,6 +63,7 @@ class SelectedUserProfileViewController: UIViewController, UITableViewDelegate, 
             DispatchQueue.main.async{
                 self.selectedUserImageView.kf.indicatorType = .activity
                 self.selectedUserImageView.kf.setImage(with: profileResource)
+                }
             }
         }
     }

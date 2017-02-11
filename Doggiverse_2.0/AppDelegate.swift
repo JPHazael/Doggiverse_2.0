@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     var container: UIView!
+    var reachability: Reachability?
+
     
     class func instance() -> AppDelegate{
         return UIApplication.shared.delegate as! AppDelegate
@@ -59,9 +61,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Enable data persistence for when if the user goes offline or has connection issues.
         FIRDatabase.database().persistenceEnabled = true
         
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.checkForReachability), name: NSNotification.Name.reachabilityChanged, object: nil)
+        
+        self.reachability = Reachability.forInternetConnection()
+        self.reachability!.startNotifier()
+        
         
         
         return true
     }
+    
+    func checkForReachability(notification: Notification){
+        
+        let remoteHostStatus = self.reachability!.currentReachabilityStatus()
+        
+        if remoteHostStatus == NotReachable{
+        DispatchQueue.main.async{
+            let alert = SCLAlertView()
+            _ = alert.showError("OOPS", subTitle: "It Appears you have lost your internet connection. This my affect the performance of the app.")
+            
+            }
+        }
+    }
+    
 }
 

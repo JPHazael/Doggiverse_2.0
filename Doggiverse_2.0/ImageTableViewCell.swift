@@ -32,8 +32,13 @@ class ImageTableViewCell: UITableViewCell {
     
     @IBAction func postWasFlagged(_ sender: AnyObject) {
         self.flagButton.isEnabled = false
-        FirebaseClient.sharedInstance.postWasFlagged(postUID: self.postUID, postID: self.postID)
-        
+        //FirebaseClient.sharedInstance.postWasFlagged(postUID: self.postUID, postID: self.postID)
+        FirebaseClient.sharedInstance.postWasFlagged(postUID: self.postUID, postID: self.postID) { (success) in
+            if success == false{
+                let alert = SCLAlertView()
+                _ = alert.showError("OOPS", subTitle: "There was an error flagging this post. Please try again.")
+            }
+        }
     }
     
     
@@ -70,7 +75,4 @@ class ImageTableViewCell: UITableViewCell {
         }
         
     }
-    
-    
-    
 }

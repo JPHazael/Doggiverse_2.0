@@ -153,8 +153,18 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         return (newLength > 60) ? false : true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Meme"{
+            self.postImageView.image = nil
+            
+        }
+    }
+    
     
 }
+
+
+
 
 extension AddPostViewController {
     

@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 
+
+
 class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResultsControllerDelegate {
     
     
@@ -18,6 +20,60 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     var memeContext: NSManagedObjectContext {
         return delegate.stack.context
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    
+    
+    @IBOutlet weak var emailTextField: CustomizableTextfield! {
+        didSet{
+            emailTextField.delegate = self
+        }
+    }
+    @IBOutlet weak var passwordTextField: CustomizableTextfield!{
+        didSet{
+            passwordTextField.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var forgotDetailButton: UIButton!
+    @IBOutlet weak var signInButton: CustomizableButton!
+    
+    var reachability: Reachability?
+
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        setTapGestureRecognizerOnView()
+        setSwipeGestureRecognizerOnView()
+        self.loadUserInfo()
+        let gradient = CAGradientLayer()
+        gradient.frame = self.view.frame
+        gradient.colors = [UIColor.black.cgColor, UIColor.black.cgColor, UIColor.darkGray.cgColor, UIColor.white.cgColor]
+        
+        view.layer.insertSublayer(gradient, at: 0)
+        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if user != nil {
+                print("User is signed in.")
+            } else {
+                print("User is signed out.")
+            }
+        }
+        
+    }
+    
+
+
+
+    
+    
     
     func loadUserInfo() {
         
@@ -43,47 +99,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     
     
     
-    @IBOutlet weak var emailTextField: CustomizableTextfield! {
-        didSet{
-            emailTextField.delegate = self
-        }
-    }
-    @IBOutlet weak var passwordTextField: CustomizableTextfield!{
-        didSet{
-            passwordTextField.delegate = self
-        }
-    }
-    
-    @IBOutlet weak var forgotDetailButton: UIButton!
-    @IBOutlet weak var signInButton: CustomizableButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        setTapGestureRecognizerOnView()
-        setSwipeGestureRecognizerOnView()
-        self.loadUserInfo()
-        let gradient = CAGradientLayer()
-        gradient.frame = self.view.frame
-        gradient.colors = [UIColor.black.cgColor, UIColor.black.cgColor, UIColor.darkGray.cgColor, UIColor.white.cgColor]
-        
-        view.layer.insertSublayer(gradient, at: 0)
-        
-        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
-            if user != nil {
-                print("User is signed in.")
-            } else {
-                print("User is signed out.")
-            }
-        }
-        
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
-    
     @IBAction func forgotPassword(_ sender: AnyObject) {
         FIRAuth.auth()?.sendPasswordReset(withEmail: emailTextField.text!) { error in
             if self.emailTextField.text != nil{
@@ -91,7 +106,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
                 _ = alert.showWarning("No worries", subTitle: "We've sent you an Email with password reset instructions")
                 
             } else{
-                print(error?.localizedDescription)
+                let alert = SCLAlertView()
+                _ = alert.showWarning("OOPS", subTitle: "We weren't able to send you a new password. Please try again.")
             }
         }
         
@@ -110,10 +126,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
             _ = alert.showWarning("Please fill in all the fields!", subTitle: "One or more fields have not been filled. Please try again.")
         }else {
             
-            FirebaseClient.sharedInstance.signIn(email: finalEmail, password: password)
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! HomeViewController
-            self.present(vc, animated: true, completion: nil)
-            
+            FirebaseClient.sharedInstance.signIn(email: finalEmail, password: password, completion: { (success) in
+                if success == true{
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                    self.present(vc, animated: true, completion: nil)
+                }
+            })
         }
         self.view.endEditing(true)
     }

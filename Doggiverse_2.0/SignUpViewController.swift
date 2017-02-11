@@ -14,6 +14,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    var signedUp: Bool!
     
     var memeContext: NSManagedObjectContext {
         return delegate.stack.context
@@ -124,20 +125,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         if finalEmail.isEmpty || password.isEmpty || reenterPassword.isEmpty || firstname.isEmpty || lastname.isEmpty || country.isEmpty {
             let alert = SCLAlertView()
-            _ = alert.showWarning("OH LA LA NO 🙈!", subTitle: "One or more fields have not been filled. Please try again.")
+            _ = alert.showWarning("OOPS", subTitle: "One or more fields have not been filled. Please try again.")
         }else {
             
             if password == reenterPassword {
                 
                 print("valid email")
-                FirebaseClient.sharedInstance.signUp(firstName: firstname, lastName: lastname, country: country, password: password, email: finalEmail, profilePictureData: imgData!, username: usernameTextField.text!)
-                
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                self.present(vc, animated: true, completion: nil)
-                
+
+                FirebaseClient.sharedInstance.signUp(firstName: firstname, lastName: lastname, country: country, password: password, email: finalEmail, profilePictureData: imgData!, username: usernameTextField.text!, completion: { (success) in
+                    if success{
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                })
             } else {
                 let alert = SCLAlertView()
-                _ = alert.showError("OOPS🙊", subTitle: "Passwords do not match. Please try again.")
+                _ = alert.showError("OOPS", subTitle: "There was an error signing up. Please try again.")
             }
             
         }

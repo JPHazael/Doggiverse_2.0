@@ -1078,10 +1078,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageCell" rowHeight="450" id="ETP-R3-J8Z" customClass="ImageTableViewCell" customModule="Doggiverse_2_0" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="450"/>
+                                        <rect key="frame" x="0.0" y="56" width="1000" height="450"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ETP-R3-J8Z" id="Umc-VO-ZE1">
-                                            <frame key="frameInset" width="375" height="449"/>
+                                            <frame key="frameInset" width="1000" height="449"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squinty_lab" translatesAutoresizingMaskIntoConstraints="NO" id="zMB-8t-ACv" customClass="CustomizableImageView" customModule="Doggiverse_2_0" customModuleProvider="target">
@@ -1379,7 +1379,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="savePost:" destination="e6l-C8-grj" eventType="touchUpInside" id="NLd-ku-XKI"/>
-                                    <segue destination="jGh-xg-QPA" kind="presentation" id="Fhw-ii-vOI"/>
+                                    <segue destination="jGh-xg-QPA" kind="presentation" identifier="Meme" id="Fhw-ii-vOI"/>
                                 </connections>
                             </button>
                         </subviews>

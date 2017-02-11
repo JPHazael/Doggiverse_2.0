@@ -25,10 +25,16 @@ struct FirebaseClient{
         return  storage.child("Users")
         
     }
+    
+
+    
     let storage = FIRStorage.storage().reference(forURL: "gs://doggiversetwopointoh.appspot.com")
     
     
-    func signUp(firstName: String, lastName: String, country: String, password: String, email: String, profilePictureData: Data, username: String){
+    func signUp(firstName: String, lastName: String, country: String, password: String, email: String, profilePictureData: Data, username: String, completion: @escaping(Bool) -> Void){
+        
+
+        
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             
@@ -38,15 +44,28 @@ struct FirebaseClient{
                 _ = alert.showWarning("Error", subTitle: "\(error.localizedDescription)")
                 
             } else{
-                self.setUserToDatabase(user: user, firstName: firstName, lastName: lastName, country: country, password: password, profilePictureData: profilePictureData, username: username)
-                
-            }
-            
-            
-        })
-    }
+                completion(true)
+
+                self.setUserToDatabase(user: user, firstName: firstName, lastName: lastName, country: country, password: password, profilePictureData: profilePictureData, username: username, completion: { (success) in
+                    if success {
+                        self.saveUserInfoToDatabase(user: user, firstName: firstName, lastName: lastName, country: country, password: password, username: username, completion: { (success) in
+                            if success{
+                                self.signIn(email: user!.email!, password: password) { (success) in
+                                 if success{
+                                 print("user \(firstName) \(lastName) has been signed in!!!")
+                                    completion(true)
+                                    }
+                                 }
+                            }
+                        })
+                    }
+                })
+                }
+            })
+        }
     
-    func setUserToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, profilePictureData: Data, username: String){
+    func setUserToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, profilePictureData: Data, username: String, completion: @escaping(Bool) -> Void){
+        
         
         let metadata = FIRStorageMetadata()
         let profilePictureRef = self.userStorage.child("\(user.uid).jpg")
@@ -73,26 +92,25 @@ struct FirebaseClient{
                         _ = alert.showWarning("Error", subTitle: "\(error.localizedDescription)")
                         
                     } else{
-                        
-                        self.saveUserInfoToDatabase(user: user, firstName: firstName, lastName: lastName, country: country, password: password, username: username)
-                        
-                        
-                    }
-                })
+                        completion(true)
+
+                        }
+                    })
+                }
             }
-            
         }
+    
+    
+    
+    func saveUserInfoToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, username: String, completion: @escaping(Bool) -> Void){
         
-    }
-    
-    
-    func saveUserInfoToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, username: String){
+
+        
         
         let userRef = databaseRef.child("users").child(user.uid)
         let newUser = User(email: user.email!, firstName: firstName, lastName: lastName, uid: user.uid, profilePictureURL: String(describing: user.photoURL!), country: country, username: username)
         userRef.setValue(newUser.toAnyObject()) { (error, ref) in
             if let error = error{
-                
                 let alert = SCLAlertView()
                 _ = alert.showWarning("Error", subTitle: "\(error.localizedDescription)")
                 
@@ -100,24 +118,31 @@ struct FirebaseClient{
                 print ("user \(firstName) \(lastName) has been signed up!!!")
             }
         }
-        self.signIn(email: user.email!, password: password)
+        completion(true)
     }
     
-    func signIn(email: String, password: String){
+    
+    func signIn(email: String, password: String, completion: @escaping(Bool) -> Void){
+        
+
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if let error = error{
                 
                 let alert = SCLAlertView()
                 _ = alert.showWarning("Error", subTitle: "\(error.localizedDescription)")
+                completion(false)
                 
             } else{
                 if let user = user{
                     print("\(user.displayName) has signed in!")
+                    completion(true)
                 }
             }
         })
     }
+    
+
     
     func logoutUser(completion:() -> ()){
         
@@ -167,6 +192,9 @@ struct FirebaseClient{
         
         ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with:{ snap in
             
+            
+            
+            
             let posts = snap.value as! [String: AnyObject]
             for (_, post) in posts{
                 if uid == (post["userID"] as? String)!{
@@ -194,7 +222,7 @@ struct FirebaseClient{
         ref.removeAllObservers()
     }
     
-    func postWasFlagged(postUID: String, postID: String){
+    func postWasFlagged(postUID: String, postID: String, completion: @escaping(Bool) -> Void){
         
         if FIRAuth.auth()!.currentUser!.uid == postUID {}
         else{
@@ -224,7 +252,8 @@ struct FirebaseClient{
                         
                         ref.child("posts").child(postID).updateChildValues(updateFlags, withCompletionBlock: { (error, reff) in
                             if error != nil{
-                                print(error?.localizedDescription)
+                                let alert = SCLAlertView()
+                                _ = alert.showWarning("Error", subTitle: "\(error?.localizedDescription)")
                             }else {
                                 ref.child("posts").child(postID).observeSingleEvent(of: .value, with:{ snap in
                                     if let properties = snap.value as? [String:AnyObject]{
@@ -236,18 +265,20 @@ struct FirebaseClient{
                                             
                                             let update = ["flags": count]
                                             
+                                            
                                             ref.child("posts").child(postID).updateChildValues(update)
+                                            completion(true)
                                             ref.child("posts").child(postID).observeSingleEvent(of: .value, with:{ ssnap in
                                                 if let properties = snap.value as? [String:AnyObject]{
                                                     
                                                     if let flags = properties["peopleWhoFlag"] as? [String:AnyObject]{
                                                         if flags.count == 3{
                                                             let alert = SCLAlertView()
-                                                            _ = alert.showWarning("Thank you for your vigilance.", subTitle: "This post has been flagged. If a couple more people flag this post, we will remove it.")
+                                                            _ = alert.showWarning("Thank you", subTitle: "This post has been flagged. If a couple more people flag this post, we will remove it.")
                                                             ref.child("posts").child(postID).removeValue()
                                                         } else {
                                                             let alert = SCLAlertView()
-                                                            _ = alert.showWarning("Thank you for your vigilance.", subTitle: "This post has been flagged. If a couple more people flag this post, we will remove it.")
+                                                            _ = alert.showWarning("Thank you", subTitle: "This post has been flagged. If a couple more people flag this post, we will remove it.")
                                                         }
                                                     }
                                                 }
@@ -296,7 +327,8 @@ struct FirebaseClient{
                         
                         ref.child("posts").child(postID).updateChildValues(updateLikes, withCompletionBlock: { (error, reff) in
                             if error != nil{
-                                print(error?.localizedDescription)
+                                let alert = SCLAlertView()
+                                _ = alert.showWarning("Error", subTitle: "\(error?.localizedDescription)")
                             }else {
                                 ref.child("posts").child(postID).observeSingleEvent(of: .value, with:{ snap in
                                     if let properties = snap.value as? [String:AnyObject]{
@@ -335,14 +367,13 @@ struct FirebaseClient{
                 let user = User(snapshot: user as! FIRDataSnapshot)
                 
                 resultsArray.append(user)
-                print("results array= \(resultsArray)")
-                
                 completion(resultsArray)
             }
             
             })
         { (error) in
-            print(error.localizedDescription)
+            let alert = SCLAlertView()
+            _ = alert.showWarning("Error", subTitle: "\(error.localizedDescription)")
         }
     }
     
@@ -410,13 +441,17 @@ struct FirebaseClient{
             
             
             let uploadTask = imageRef.put(imageData!, metadata: nil, completion: { (newMetaData, error) in
-                if error == nil {
-                    
+                if error != nil {
+                    let alert = SCLAlertView()
+                    _ = alert.showWarning("Error", subTitle: "\(error?.localizedDescription)")
+                } else{
+                
                     
                     
                     imageRef.downloadURL(completion: { (url, error) in
                         if error != nil{
-                            print(error?.localizedDescription)
+                            let alert = SCLAlertView()
+                            _ = alert.showWarning("ERROR", subTitle: "\(error?.localizedDescription)")
                         } else{
                             if let url = url {
                                 

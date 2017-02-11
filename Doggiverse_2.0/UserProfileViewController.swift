@@ -55,6 +55,12 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
             
             self.selectedUser = user
             
+            if user.uid == nil{
+                let alert = SCLAlertView()
+                _ = alert.showError("OOPS", subTitle: "There was an error fetching the user info.")
+            }else{
+ 
+            
             self.countryLabel.text = user.country
             self.emailLabel.text = user.email
             self.firstNameTextField.text = user.firstName
@@ -72,10 +78,10 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
                 self.userProfileImageView.kf.indicatorType = .activity
                 self.userProfileImageView.kf.setImage(with: profileResource)
                 AppDelegate.instance().dismissActivityIndicator()
+                }
             }
         }
     }
-    
     
     
     // MARK: - Table View Delegate
