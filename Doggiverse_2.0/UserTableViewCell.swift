@@ -13,11 +13,6 @@ import Kingfisher
 
 class UserTableViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
@@ -26,7 +21,11 @@ class UserTableViewCell: UITableViewCell {
         return FIRStorage.storage()
     }
     
-    
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+
     func configureCellForUser(user: User){
         
         self.username.text = user.getFullName()

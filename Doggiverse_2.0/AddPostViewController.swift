@@ -14,12 +14,6 @@ import FirebaseStorage
 
 class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var addPhotoButton: CustomizableButton!
-    @IBOutlet weak var postImageView: CustomizableImageView!
-    @IBOutlet weak var postTextField: UITextView!
-    @IBOutlet weak var postButton: CustomizableButton!
-    @IBOutlet weak var charactersLabel: UILabel!
-    
     var currentUser: User!
     
     var storageRef: FIRStorage!{
@@ -29,6 +23,13 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
+    
+    
+    @IBOutlet weak var addPhotoButton: CustomizableButton!
+    @IBOutlet weak var postImageView: CustomizableImageView!
+    @IBOutlet weak var postTextField: UITextView!
+    @IBOutlet weak var postButton: CustomizableButton!
+    @IBOutlet weak var charactersLabel: UILabel!
     
     
     
@@ -99,12 +100,6 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        self.dismiss(animated: true, completion: nil)
-        self.postImageView.image = image
-    }
-    
-    
     
     @IBAction func savePost(_ sender: CustomizableButton) {
         
@@ -118,14 +113,17 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         if postImageView.image != nil{
             FirebaseClient.sharedInstance.uploadPost(postImage: postImageView.image!, postText: postText, currentUser: self.currentUser)
             
-            
-            
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! HomeViewController
             self.present(vc, animated: true, completion: nil)
         } else{
             let alert = SCLAlertView()
             _ = alert.showWarning("PLEASE ADD AN IMAGE", subTitle: "You must add an image in order to post.")
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.dismiss(animated: true, completion: nil)
+        self.postImageView.image = image
     }
     
     

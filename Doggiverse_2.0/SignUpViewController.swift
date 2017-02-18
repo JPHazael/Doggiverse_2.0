@@ -15,7 +15,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
     var signedUp: Bool!
-    
+    var countryArrays: [String] = []
+    var pickerView: UIPickerView!
     var memeContext: NSManagedObjectContext {
         return delegate.stack.context
     }
@@ -27,33 +28,26 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
             usernameTextField.delegate = self
         }
     }
-    
-    
-    
     @IBOutlet weak var emailTextField: CustomizableTextfield! {
         didSet{
             emailTextField.delegate = self
         }
     }
-    
     @IBOutlet weak var passwordTextField: CustomizableTextfield!{
         didSet{
             passwordTextField.delegate = self
         }
     }
-    
     @IBOutlet weak var reenterPasswordTextField: CustomizableTextfield! {
         didSet{
             reenterPasswordTextField.delegate = self
         }
     }
-    
     @IBOutlet weak var firstnameTextField: CustomizableTextfield!{
         didSet{
             firstnameTextField.delegate = self
         }
     }
-    
     @IBOutlet weak var lastnameTextField: CustomizableTextfield! {
         didSet{
             lastnameTextField.delegate = self
@@ -72,16 +66,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     
     @IBOutlet weak var createAccountButton: CustomizableButton!
-    
     @IBOutlet weak var userProfileImageView: CustomizableImageView!
     
     
-    var countryArrays: [String] = []
-    var pickerView: UIPickerView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         setTapGestureRecognizerOnView()
         setSwipeGestureRecognizerOnView()

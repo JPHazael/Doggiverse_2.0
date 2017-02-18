@@ -12,6 +12,8 @@ import Kingfisher
 
 class ImageTableViewCell: UITableViewCell {
     
+    var postID: String!
+    var postUID: String!
     
     @IBOutlet weak var profileImageView: CustomizableImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -22,12 +24,6 @@ class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var flagButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
-    
-    
-    var postID: String!
-    var postUID: String!
-    
-    
     
     
     @IBAction func postWasFlagged(_ sender: AnyObject) {

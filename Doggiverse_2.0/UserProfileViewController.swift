@@ -12,19 +12,6 @@ import Kingfisher
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
-    @IBOutlet weak var userProfileImageView: CustomizableImageView!
-    @IBOutlet weak var firstNameTextField: CustomizableTextfield!
-    @IBOutlet weak var lastNameTextField: CustomizableTextfield!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var currentUserTableView: UITableView!
-    @IBOutlet weak var usernameTextField: CustomizableTextfield!
-    
-    
-    
-    
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
@@ -36,6 +23,15 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var ref: FIRDatabaseReference!
     var selectedUser: User!
     var postsArray = [Post]()
+    
+    @IBOutlet weak var userProfileImageView: CustomizableImageView!
+    @IBOutlet weak var firstNameTextField: CustomizableTextfield!
+    @IBOutlet weak var lastNameTextField: CustomizableTextfield!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var currentUserTableView: UITableView!
+    @IBOutlet weak var usernameTextField: CustomizableTextfield!
+
     
     
     override func viewDidLoad() {

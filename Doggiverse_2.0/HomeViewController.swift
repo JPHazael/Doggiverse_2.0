@@ -34,19 +34,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     
-    
-    @IBAction func logout(_ sender: AnyObject) {
-        
-        FirebaseClient.sharedInstance.logoutUser {
-            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login") as! LoginViewController
-            self.present(loginVC, animated: true, completion: nil)
-        }
-        
-    }
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSegmentedControl()
@@ -67,6 +54,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func unwinedToHome(storyboardSegue: UIStoryboardSegue) {}
+    
+    @IBAction func logout(_ sender: AnyObject) {
+        
+        FirebaseClient.sharedInstance.logoutUser {
+            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login") as! LoginViewController
+            self.present(loginVC, animated: true, completion: nil)
+        }
+        
+    }
     
     
     func setUpSearchBar(){
@@ -128,6 +124,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
     }
+    
     func segementedControlAction(){
         if segmentedControl?.selectedSegmentIndex == 0{
             self.tableView.rowHeight = UITableViewAutomaticDimension

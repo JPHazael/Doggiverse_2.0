@@ -11,12 +11,7 @@ import Firebase
 import Kingfisher
 
 class SelectedUserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var selectedUserImageView: CustomizableImageView!
-    @IBOutlet weak var selectedUserTableView: UITableView!
-    @IBOutlet weak var usernameTextField: CustomizableTextfield!
-    
+   
     var ref: FIRDatabaseReference!
     var selectedUser: User!
     var postsArray = [Post]()
@@ -28,6 +23,15 @@ class SelectedUserProfileViewController: UIViewController, UITableViewDelegate, 
     var storageRef: FIRStorage!{
         return FIRStorage.storage()
     }
+    
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var selectedUserImageView: CustomizableImageView!
+    @IBOutlet weak var selectedUserTableView: UITableView!
+    @IBOutlet weak var usernameTextField: CustomizableTextfield!
+    
+
     
     
     override func viewDidLoad() {

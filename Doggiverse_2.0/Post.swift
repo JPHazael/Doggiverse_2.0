@@ -21,9 +21,6 @@ class Post: NSObject {
     var profilePictureURL: String!
     var postAge: String!
     
-    
-    
-    
     var usersWhoLike: [String] = [String]()
     var usersWhoFlag: [String] = [String]()
 }

@@ -12,6 +12,7 @@ import Firebase
 struct FirebaseClient{
     
     static let sharedInstance = FirebaseClient()
+    let storage = FIRStorage.storage().reference(forURL: "gs://doggiversetwopointoh.appspot.com")
     
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
@@ -26,15 +27,7 @@ struct FirebaseClient{
         
     }
     
-
-    
-    let storage = FIRStorage.storage().reference(forURL: "gs://doggiversetwopointoh.appspot.com")
-    
-    
     func signUp(firstName: String, lastName: String, country: String, password: String, email: String, profilePictureData: Data, username: String, completion: @escaping(Bool) -> Void){
-        
-
-        
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             
@@ -103,10 +96,7 @@ struct FirebaseClient{
     
     
     func saveUserInfoToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, username: String, completion: @escaping(Bool) -> Void){
-        
-
-        
-        
+    
         let userRef = databaseRef.child("users").child(user.uid)
         let newUser = User(email: user.email!, firstName: firstName, lastName: lastName, uid: user.uid, profilePictureURL: String(describing: user.photoURL!), country: country, username: username)
         userRef.setValue(newUser.toAnyObject()) { (error, ref) in
@@ -123,9 +113,7 @@ struct FirebaseClient{
     
     
     func signIn(email: String, password: String, completion: @escaping(Bool) -> Void){
-        
-
-        
+    
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if let error = error{
                 
@@ -142,20 +130,16 @@ struct FirebaseClient{
         })
     }
     
-
-    
     func logoutUser(completion:() -> ()){
         
         try! FIRAuth.auth()!.signOut()
         completion()
     }
-    
-    
+
     func fetchAllPosts(completion: @escaping([Post]) -> Void){
         var resultsArray = [Post]()
         let ref = FIRDatabase.database().reference()
-        
-        
+
         ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with:{ snap in
             
             let posts = snap.value as! [String: AnyObject]
@@ -185,15 +169,11 @@ struct FirebaseClient{
     }
     
     func fetchPostsForUser(userID: String, ref: FIRDatabaseReference, completion: @escaping([Post]) -> Void){
+        
         var resultsArray = [Post]()
         let uid = userID
-        
-        
-        
+    
         ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with:{ snap in
-            
-            
-            
             
             let posts = snap.value as! [String: AnyObject]
             for (_, post) in posts{
@@ -296,7 +276,6 @@ struct FirebaseClient{
         }
     }
     
-    
     func postWasliked(postUID: String, postID: String, completion: @escaping(Int) -> Void){
         
         if FIRAuth.auth()!.currentUser!.uid == postUID {}
@@ -358,9 +337,7 @@ struct FirebaseClient{
         let usersRef = databaseRef.child("users")
         var resultsArray = [User]()
         
-        
         usersRef.observe(.value, with: { (userSnapshot) in
-            
             
             for user in userSnapshot.children{
                 
@@ -377,10 +354,8 @@ struct FirebaseClient{
         }
     }
     
-    
-    
-    
     func fetchCurrentUserInfo(completion:@escaping (User) -> ()){
+       
         let currentUser = FIRAuth.auth()!.currentUser!
         let currentUserRef =  databaseRef.child("users").child(currentUser.uid)
         currentUserRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -411,8 +386,6 @@ struct FirebaseClient{
         }
         ref.removeAllObservers()
     }
-    
-    
     
     func uploadPost(postImage: UIImage, postText: String, currentUser: User){
         
@@ -467,15 +440,11 @@ struct FirebaseClient{
                                             "postAge": humanReadableAge
                                     ] as [String : Any]
                                 
-                                
-                                
                                 let postFeed = ["\(key)": feed]
                                 
                                 self.databaseRef.child("posts").updateChildValues(postFeed)
                                 AppDelegate.instance().dismissActivityIndicator()
-                                
                             }
-                            
                         }
                     })
                 }
@@ -488,8 +457,6 @@ struct FirebaseClient{
         }
         
     }
-    
-    
     
     func downloadImage(urlString: String, completion:@escaping (UIImage?) -> ()){
         
@@ -507,10 +474,6 @@ struct FirebaseClient{
                     }
                 })
             }
-            
         })
-        
-        
     }
-    
 }

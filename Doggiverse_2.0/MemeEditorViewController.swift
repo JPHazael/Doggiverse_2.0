@@ -13,6 +13,14 @@ class ViewController: UIViewController,
 UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
+    let pickerController = UIImagePickerController()
+    
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 28)!,
+        NSStrokeWidthAttributeName : -3
+        ] as [String : Any]
     
     var memeContext: NSManagedObjectContext {
         return delegate.stack.context
@@ -29,14 +37,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     
-    let pickerController = UIImagePickerController()
-    
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 28)!,
-        NSStrokeWidthAttributeName : -3
-        ] as [String : Any]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

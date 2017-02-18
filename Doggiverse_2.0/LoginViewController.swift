@@ -16,17 +16,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    
     var memeContext: NSManagedObjectContext {
         return delegate.stack.context
     }
-    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    
-    
+   
     @IBOutlet weak var emailTextField: CustomizableTextfield! {
         didSet{
             emailTextField.delegate = self
@@ -37,19 +33,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
             passwordTextField.delegate = self
         }
     }
-    
     @IBOutlet weak var forgotDetailButton: UIButton!
     @IBOutlet weak var signInButton: CustomizableButton!
     
-    var reachability: Reachability?
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
         setTapGestureRecognizerOnView()
         setSwipeGestureRecognizerOnView()
         self.loadUserInfo()
@@ -70,11 +61,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     }
     
 
-
-
-    
-    
-    
     func loadUserInfo() {
         
         let request: NSFetchRequest<UserProfile> = UserProfile.fetchRequest()

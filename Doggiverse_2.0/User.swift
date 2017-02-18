@@ -23,7 +23,6 @@ class User: NSObject {
     var key: String?
     var username: String!
     
-    
     init(snapshot: FIRDataSnapshot){
         
         key = snapshot.key
@@ -35,8 +34,6 @@ class User: NSObject {
         uid = (snapshot.value as? NSDictionary)?["uid"] as? String
         profilePictureURL = (snapshot.value as? NSDictionary)?["profilePictureURL"] as? String
         username = (snapshot.value as? NSDictionary)?["username"] as? String
-        
-        
     }
     
     init(email: String, firstName: String, lastName: String, uid: String, profilePictureURL: String, country: String, key: String = "", username: String){
@@ -52,16 +49,11 @@ class User: NSObject {
         
     }
     
-    
-    
     func getFullName() -> String{
-        
         return "\(firstName!) \(lastName!)"
     }
     
     func toAnyObject() -> [String: Any]{
-        
         return ["email": email, "firstName":firstName, "lastName":lastName, "uid": uid, "profilePictureURL": profilePictureURL, "country": country! as String, "username": username! as String]
     }
-    
 }
