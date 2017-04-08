@@ -41,9 +41,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        weak var weakSelf = self
+
+        
         setTapGestureRecognizerOnView()
         setSwipeGestureRecognizerOnView()
-        self.loadUserInfo()
+        weakSelf?.loadUserInfo()
         let gradient = CAGradientLayer()
         gradient.frame = self.view.frame
         gradient.colors = [UIColor.black.cgColor, UIColor.black.cgColor, UIColor.darkGray.cgColor, UIColor.white.cgColor]
@@ -112,10 +116,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
             _ = alert.showWarning("Please fill in all the fields!", subTitle: "One or more fields have not been filled. Please try again.")
         }else {
             
-            FirebaseClient.sharedInstance.signIn(email: finalEmail, password: password, completion: { (success) in
+            FirebaseClient.sharedInstance.signIn(email: finalEmail, password: password, completion: { [weak self](success) in
                 if success == true{
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                    self.present(vc, animated: true, completion: nil)
+                    self?.present(vc, animated: true, completion: nil)
                 }
             })
         }

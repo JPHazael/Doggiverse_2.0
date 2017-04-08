@@ -421,7 +421,7 @@ struct FirebaseClient{
                 
                     
                     
-                    imageRef.downloadURL(completion: { (url, error) in
+                    imageRef.downloadURL(completion: {(url, error) in
                         if error != nil{
                             let alert = SCLAlertView()
                             _ = alert.showWarning("ERROR", subTitle: "\(error?.localizedDescription)")

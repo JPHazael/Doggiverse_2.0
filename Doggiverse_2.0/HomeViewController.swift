@@ -36,9 +36,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSegmentedControl()
-        self.setUpUsers()
-        self.setUpSearchBar()
+        weak var weakSelf = self
+
+        
+        weakSelf?.setupSegmentedControl()
+        weakSelf?.setUpUsers()
+        weakSelf?.setUpSearchBar()
         tableView.tableHeaderView = searchController.searchBar
 
         
@@ -57,9 +60,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func logout(_ sender: AnyObject) {
         
-        FirebaseClient.sharedInstance.logoutUser {
+        FirebaseClient.sharedInstance.logoutUser {[weak self] in
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login") as! LoginViewController
-            self.present(loginVC, animated: true, completion: nil)
+            self?.present(loginVC, animated: true, completion: nil)
         }
         
     }
@@ -77,10 +80,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setUpUsers(){
         AppDelegate.instance().showActivityIndicator()
         
-        FirebaseClient.sharedInstance.fetchAllUsers { (users) in
+        FirebaseClient.sharedInstance.fetchAllUsers { [weak self] (users) in
             
-            self.usersArray = users
-            self.tableView.reloadData()
+            self?.usersArray = users
+            self?.tableView.reloadData()
             AppDelegate.instance().dismissActivityIndicator()
         }
     }
@@ -126,14 +129,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func segementedControlAction(){
+        weak var weakSelf = self
+
+        
         if segmentedControl?.selectedSegmentIndex == 0{
+            
             self.tableView.rowHeight = UITableViewAutomaticDimension
-            self.setUpSearchBar()
-            self.setUpUsers()
+            weakSelf?.setUpSearchBar()
+            weakSelf?.setUpUsers()
             
         } else{
             self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
-            self.postFetch()
+            weakSelf?.postFetch()
             tableView.tableHeaderView?.isHidden = true
         }
     }
