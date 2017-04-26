@@ -14,19 +14,17 @@ import Kingfisher
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: nil)
-    var storageRef: FIRStorage!{
+    private var storageRef: FIRStorage!{
         return FIRStorage.storage()
     }
     
-    
-    
-    var currentUser: User!
-    var following = [String]()
-    var segmentedControl: HMSegmentedControl!
-    var usersArray = [User]()
-    var postsArray = [Post]()
-    var filteredUsersArray = [User]()
-    var databaseRef: FIRDatabaseReference! {
+    private var currentUser: User!
+    private var following = [String]()
+    private var segmentedControl: HMSegmentedControl!
+    private var usersArray = [User]()
+    private var postsArray = [Post]()
+    private var filteredUsersArray = [User]()
+    private var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
@@ -68,7 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    func setUpSearchBar(){
+    private func setUpSearchBar(){
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -77,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.tableHeaderView = searchController.searchBar
     }
     
-    func setUpUsers(){
+    private func setUpUsers(){
         AppDelegate.instance().showActivityIndicator()
         
         FirebaseClient.sharedInstance.fetchAllUsers { [weak self] (users) in
@@ -88,7 +86,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func postFetch(){
+    private func postFetch(){
         AppDelegate.instance().showActivityIndicator()
         
         
@@ -99,7 +97,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func setupSegmentedControl(){
+    private func setupSegmentedControl(){
         
         
         segmentedControl = HMSegmentedControl(frame: CGRect(x: 0, y: 120, width: self.view.frame.size.width, height: 60))
@@ -128,7 +126,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func segementedControlAction(){
+     func segementedControlAction(){
         weak var weakSelf = self
 
         

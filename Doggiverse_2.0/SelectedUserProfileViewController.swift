@@ -13,8 +13,8 @@ import Kingfisher
 class SelectedUserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     var ref: FIRDatabaseReference!
-    var selectedUser: User!
-    var postsArray = [Post]()
+    private var selectedUser: User!
+    private var postsArray = [Post]()
     
     var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
@@ -42,7 +42,7 @@ class SelectedUserProfileViewController: UIViewController, UITableViewDelegate, 
         self.fetchSelectedUser()
     }
     
-    func fetchSelectedUser(){
+   private func fetchSelectedUser(){
         FirebaseClient.sharedInstance.fetchSelectedUserInfo(ref: ref) { (user) in
             
             if user.uid == nil{

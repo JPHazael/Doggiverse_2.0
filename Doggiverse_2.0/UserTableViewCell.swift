@@ -13,11 +13,11 @@ import Kingfisher
 
 class UserTableViewCell: UITableViewCell {
     
-    var databaseRef: FIRDatabaseReference! {
+    private var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
-    var storageRef: FIRStorage!{
+    private var storageRef: FIRStorage!{
         return FIRStorage.storage()
     }
     

@@ -12,8 +12,8 @@ import Kingfisher
 
 class ImageTableViewCell: UITableViewCell {
     
-    var postID: String!
-    var postUID: String!
+    private var postID: String!
+    private var postUID: String!
     
     @IBOutlet weak var profileImageView: CustomizableImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -48,7 +48,7 @@ class ImageTableViewCell: UITableViewCell {
     }
     
     
-    func configureCellForPost(post: Post){
+     func configureCellForPost(post: Post){
         
         self.fullNameLabel.text = post.author
         self.usernameLabel.text = "@\(post.username!)"

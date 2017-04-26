@@ -12,17 +12,17 @@ import Kingfisher
 
 class UserProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var databaseRef: FIRDatabaseReference! {
+    private var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
-    var storageRef: FIRStorage!{
+    private var storageRef: FIRStorage!{
         return FIRStorage.storage()
     }
     
-    var ref: FIRDatabaseReference!
-    var selectedUser: User!
-    var postsArray = [Post]()
+    private var ref: FIRDatabaseReference!
+    private var selectedUser: User!
+    private var postsArray = [Post]()
     
     @IBOutlet weak var userProfileImageView: CustomizableImageView!
     @IBOutlet weak var firstNameTextField: CustomizableTextfield!
@@ -44,7 +44,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    func fetchCurrentUser(){
+    private func fetchCurrentUser(){
         AppDelegate.instance().showActivityIndicator()
         
         FirebaseClient.sharedInstance.fetchCurrentUserInfo { (user) in
@@ -80,7 +80,7 @@ class UserProfileViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    // MARK: - Table View Delegate
+    // MARK: - Table View Data Source
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

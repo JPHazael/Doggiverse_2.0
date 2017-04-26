@@ -22,7 +22,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         NSStrokeWidthAttributeName : -3
         ] as [String : Any]
     
-    var memeContext: NSManagedObjectContext {
+    private var memeContext: NSManagedObjectContext {
         return delegate.stack.context
     }
     
@@ -69,12 +69,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     
     
     
-    func subscribeToKeyboardNotifications() {
+    private func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow)  , name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func unsubscribeFromKeyboardNotifications() {
+    private func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name:
             NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name:
@@ -121,7 +121,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     
     // functions for text field delegation and initial text text field conditions
     
-    func setTextAttributes(_: UITextField, _: UITextField){
+    private func setTextAttributes(_: UITextField, _: UITextField){
         textFieldTop.defaultTextAttributes = memeTextAttributes
         textFieldBottom.defaultTextAttributes = memeTextAttributes
         
@@ -151,7 +151,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         
     }
     
-    func pickAnImageFromSource(source: UIImagePickerControllerSourceType) {
+    private func pickAnImageFromSource(source: UIImagePickerControllerSourceType) {
         // code to pick an image from source
         pickerController.delegate = self
         pickerController.sourceType = source
@@ -186,7 +186,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     
     // put everything together and create the memedImage
     
-    func generateMemedImage() -> UIImage
+    private func generateMemedImage() -> UIImage
     {
         toolBar.isHidden = true
         navBar.isHidden = true
@@ -205,7 +205,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     }
     
     
-    func save() {
+    private func save() {
         //populate the Meme struct with the memedImage data
         let memedImage = generateMemedImage()
         

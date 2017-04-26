@@ -14,15 +14,15 @@ struct FirebaseClient{
     static let sharedInstance = FirebaseClient()
     let storage = FIRStorage.storage().reference(forURL: "gs://doggiversetwopointoh.appspot.com")
     
-    var databaseRef: FIRDatabaseReference! {
+    private var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     
-    var storageRef: FIRStorageReference!{
+    private var storageRef: FIRStorageReference!{
         return FIRStorage.storage().reference()
     }
     
-    var userStorage: FIRStorageReference!{
+    private var userStorage: FIRStorageReference!{
         return  storage.child("Users")
         
     }
@@ -57,7 +57,7 @@ struct FirebaseClient{
             })
         }
     
-    func setUserToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, profilePictureData: Data, username: String, completion: @escaping(Bool) -> Void){
+    private func setUserToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, profilePictureData: Data, username: String, completion: @escaping(Bool) -> Void){
         
         
         let metadata = FIRStorageMetadata()
@@ -95,7 +95,7 @@ struct FirebaseClient{
     
     
     
-    func saveUserInfoToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, username: String, completion: @escaping(Bool) -> Void){
+    private func saveUserInfoToDatabase(user: FIRUser!,firstName: String, lastName: String, country: String, password: String, username: String, completion: @escaping(Bool) -> Void){
     
         let userRef = databaseRef.child("users").child(user.uid)
         let newUser = User(email: user.email!, firstName: firstName, lastName: lastName, uid: user.uid, profilePictureURL: String(describing: user.photoURL!), country: country, username: username)
@@ -458,7 +458,7 @@ struct FirebaseClient{
         
     }
     
-    func downloadImage(urlString: String, completion:@escaping (UIImage?) -> ()){
+    private func downloadImage(urlString: String, completion:@escaping (UIImage?) -> ()){
         
         let profilePictureRef = FIRStorage.storage().reference(forURL: urlString)
         profilePictureRef.data(withMaxSize: 1 * 1024 * 1024, completion: { (imgData, error) in

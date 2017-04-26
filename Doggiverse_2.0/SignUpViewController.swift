@@ -14,10 +14,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    var signedUp: Bool!
-    var countryArrays: [String] = []
-    var pickerView: UIPickerView!
-    var memeContext: NSManagedObjectContext {
+    private var signedUp: Bool!
+    fileprivate var countryArrays: [String] = []
+    fileprivate var pickerView: UIPickerView!
+    private var memeContext: NSManagedObjectContext {
         return delegate.stack.context
     }
     
@@ -143,7 +143,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
 
 extension SignUpViewController {
     
-    func getCountries(){
+    fileprivate func getCountries(){
         
         for code in NSLocale.isoCountryCodes as [String]{
             let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: code])
@@ -156,7 +156,7 @@ extension SignUpViewController {
         }
     }
     
-    func setCountryPickerView(){
+    fileprivate func setCountryPickerView(){
         
         pickerView = UIPickerView()
         pickerView.delegate = self
@@ -220,7 +220,7 @@ extension SignUpViewController {
     
     //MARK: text field delegate
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         firstnameTextField.resignFirstResponder()
@@ -231,7 +231,7 @@ extension SignUpViewController {
         return true
     }
     
-    func passwordIsSecure(textfield: UITextField){
+    fileprivate func passwordIsSecure(textfield: UITextField){
         if textfield.isEditing{
             textfield.isSecureTextEntry = true
         }

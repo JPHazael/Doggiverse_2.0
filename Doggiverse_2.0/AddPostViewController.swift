@@ -14,13 +14,13 @@ import FirebaseStorage
 
 class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var currentUser: User!
+    private var currentUser: User!
     
-    var storageRef: FIRStorage!{
+    private var storageRef: FIRStorage!{
         return FIRStorage.storage()
     }
     
-    var databaseRef: FIRDatabaseReference! {
+    private var databaseRef: FIRDatabaseReference! {
         return FIRDatabase.database().reference()
     }
     

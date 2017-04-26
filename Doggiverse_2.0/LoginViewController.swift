@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    var memeContext: NSManagedObjectContext {
+   private var memeContext: NSManagedObjectContext {
         return delegate.stack.context
     }
     override var prefersStatusBarHidden: Bool {
@@ -65,7 +65,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, NSFetchedResul
     }
     
 
-    func loadUserInfo() {
+    private func loadUserInfo() {
         
         let request: NSFetchRequest<UserProfile> = UserProfile.fetchRequest()
         
@@ -143,7 +143,7 @@ extension LoginViewController {
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
